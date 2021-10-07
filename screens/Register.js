@@ -3,33 +3,28 @@ import { Text, View, StyleSheet, ImageBackground, TextInput } from 'react-native
 
 export default function Register() {
     return (
-        <ImageBackground style={styles.container} source={require('../assets/pexels-anthony-shkraba-5214995 2.png')}>
-            <View style={styles.bl}>
-                <TextInput
-                    placeholder='Email'
-                    style={styles.placeholder}
-                />
-                <TextInput
-                    placeholder='Password'
-                    style={styles.placeholder}
-                />
-                <TextInput
-                    placeholder='Confirm Password'
-                    style={styles.placeholder}
-                />
-                <TextInput
-                    placeholder='Contact List'
-                    style={styles.placeholder}
-                />
-                <TextInput
-                    placeholder='Home Location'
-                    style={styles.placeholder}
-                />
+        <ImageBackground source={require('../assets/pexels-anthony-shkraba-5214995 2.png')}>
+            <View style={styles.main}>
+                <View style={styles.form}>
+                    <TextInput
+                        placeholder='Email'
+                        style={styles.placeholder}
+                    />
+                    <TextInput
+                        placeholder='Password'
+                        style={styles.placeholder}
+                    />
+                    <TextInput
+                        placeholder='Confirm Password'
+                        style={styles.placeholder}
+                    />
 
-                <View style={styles.btn}>
-                    <Text style={styles.text}>REGISTER</Text>
+                    <View style={styles.btn}>
+                        <Text style={styles.text}>REGISTER</Text>
+                    </View>
+                    <Text style={styles.existing}>Existing User? <Text style={styles.login}>Login Here</Text></Text>
+
                 </View>
-                <Text style={styles.existing}>Existing User? <Text style={styles.login}>Login Here</Text></Text>
             </View>
 
         </ImageBackground>
@@ -37,42 +32,48 @@ export default function Register() {
 }
 
 const styles = StyleSheet.create({
-    bl: {
+
+    main: {
         backgroundColor: 'background: rgba(5, 78, 222, 0.7);',
-        height: 624,
-        marginTop: 153,
-        borderRadius: 20,
+        height: '87%',
+        marginTop: 100,
+        borderTopLeftRadius: 60,
+        borderTopRightRadius: 60, 
+        bottom: 10,
     },
     placeholder: {
         width: 258,
         backgroundColor: '#E9F3F8',
         height: 42,
-        marginTop: 60,
+        marginTop: 45,
         marginLeft: 35,
         marginRight: 35,
         borderRadius: 20,
-        paddingLeft:15
+        paddingLeft: 15
     },
     btn: {
         backgroundColor: 'background: rgba(80, 131, 232, 1);',
         height: 52,
         width: 162,
         marginLeft: 90,
-        marginTop: 20,
+        marginTop: 50,
         borderRadius: 20,
     },
     text: {
         color: 'white',
         marginTop: 10,
-        marginLeft: 37,
+        marginLeft: 40,
         fontSize: 20
     },
     existing: {
         marginLeft: 80,
-        marginTop: 20,
+        marginTop: 60,
     },
     login: {
         color: 'white'
     },
+    form: {
+        marginTop: 120
+    }
 
 });

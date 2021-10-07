@@ -12,15 +12,8 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-<<<<<<< HEAD
     <Register/>
-=======
-      <TouchableOpacity onPress={login}>
-        <Text>Login</Text>
-      </TouchableOpacity>
-      <Text>testing</Text>
-      <StatusBar style="auto" />
->>>>>>> 42bcd5b611023a58aa8e647df0f69ad143f0e87d
+     
     </View>
   );
 }
