@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
-import signUp from '../config/signUp'
+import signUp from '../auth/signUp'
 export default function Register() {
     const RegisterUser = () => {
         signUp(email,password, Confirmpassword);
