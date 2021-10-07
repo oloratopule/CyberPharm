@@ -1,7 +1,10 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, ImageBackground, TextInput } from 'react-native';
-
+import { Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
+import signUp from '../config/signUp'
 export default function Register() {
+    const RegisterUser = () => {
+        signUp(email,password, Confirmpassword);
+    }
     return (
         <ImageBackground source={require('../assets/pexels-anthony-shkraba-5214995 2.png')}>
             <View style={styles.main}>
@@ -20,7 +23,7 @@ export default function Register() {
                     />
 
                     <View style={styles.btn}>
-                        <Text style={styles.text}>REGISTER</Text>
+                        <TouchableOpacity onPress={()=>RegisterUser()}><Text style={styles.text}>REGISTER</Text></TouchableOpacity>
                     </View>
                     <Text style={styles.existing}>Existing User? <Text style={styles.login}>Login Here</Text></Text>
 
