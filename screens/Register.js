@@ -1,7 +1,11 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 import { Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
 import signUp from '../auth/signUp'
+
 export default function Register() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [Confirmpassword, setConfirmpassword] = useState('');
     const RegisterUser = () => {
         signUp(email,password, Confirmpassword);
     }
@@ -12,14 +16,17 @@ export default function Register() {
                     <TextInput
                         placeholder='Email'
                         style={styles.placeholder}
+                        value={email} onChangeText={(email) => setEmail(email)}
                     />
                     <TextInput
                         placeholder='Password'
                         style={styles.placeholder}
+                        value={password} onChangeText={(password) => setPassword(password)}
                     />
                     <TextInput
                         placeholder='Confirm Password'
                         style={styles.placeholder}
+                        value={Confirmpassword} onChangeText={(Confirmpassword) => setConfirmpassword(Confirmpassword)}
                     />
 
                     <View style={styles.btn}>
