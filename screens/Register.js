@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 
     main: {
         backgroundColor: 'background: rgba(5, 78, 222, 0.7);',
-        height: '87%',
+        height: '86.7%',
         marginTop: 100,
         borderTopLeftRadius: 60,
         borderTopRightRadius: 60, 
