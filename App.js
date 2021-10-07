@@ -8,8 +8,7 @@ import Register from './screens/Register'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>testing</Text>
-      <StatusBar style="auto" />
+    <Register/>
     </View>
   );
 }
