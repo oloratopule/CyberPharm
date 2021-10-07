@@ -1,13 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import Register from './screens/Register'
-
+import login from './auth/login';
 
 export default function App() {
+  const login = () => {
+
+    login ("kb@gmail.com", "123456789")
+  }
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={login}>
+        <Text>Login</Text>
+      </TouchableOpacity>
       <Text>testing</Text>
       <StatusBar style="auto" />
     </View>
