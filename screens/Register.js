@@ -5,10 +5,9 @@ import signUp from '../auth/signUp'
 
 
 export default function Register({navigation}) {
-    
-    const [email, setEmail]=useState("");
-    const [password, setPassword]=useState("");
-    const [Confirmpassword, setConfirmPassword]=useState("");
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [Confirmpassword, setConfirmpassword] = useState('')
     const RegisterUser = () => {
         signUp(email,password, Confirmpassword);
     }
