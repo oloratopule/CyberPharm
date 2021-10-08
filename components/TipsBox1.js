@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View, Image } from 'react-native'
+import {  StyleSheet, View, Image } from 'react-native'
 
 export default class TipsBox1 extends Component {
     render() {
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 40,
         margin: 10, 
+        
 
     }
 })
