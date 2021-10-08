@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, ImageBackground, Button, TouchableOp
 import login from '../auth/login';
 
 const image = { uri: "../assets/bgOne.png" };
-const Login = () => {
+const Login = ({navigation}) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
