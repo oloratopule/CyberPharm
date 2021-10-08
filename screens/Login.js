@@ -1,4 +1,4 @@
-import React, { useSate } from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, TextInput, ImageBackground, Button, TouchableOpacity } from 'react-native';
 import login from '../auth/login';
 
