@@ -2,14 +2,15 @@
 import { firebase } from '../config/firebase';
 
 const login = (email, password) => {
-    firebase.auth().signInWithEmailAndPassword()(email, password).then(() => {
-        alert("scscsss")
+    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+        alert("Success")
 
-    }).cath((err) => {
+    }).catch((err) => {
 
+        console.log(err)
 
     })
 
 }
 
-export default login
+export default login;
