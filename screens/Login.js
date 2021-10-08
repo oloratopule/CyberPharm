@@ -9,7 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState('')
 
     const logi = () => {
-        login(email, password)
+        login(email, password);
 
     }
 
@@ -26,7 +26,8 @@ const Login = () => {
                 <TextInput style={styles.input}
                     placeholder="Password"
                     onChange={setPassword}
-                />
+                    secureTextEntry={true}
+                    />
 
                 <TouchableOpacity style={styles.button} onPress={logi}>
                     <Text style={styles.buttonText}>LOGIN</Text>
@@ -53,11 +54,7 @@ const styles = StyleSheet.create({
         height: 898,
         width: 400
     },
-    // img: {
-    //     position: 'relative',
-    //     width: '450px',
-    //     height: '100%'
-    // },
+
     card: {
         width: '100%',
         justifyContent: 'center',
