@@ -33,7 +33,7 @@ const Login = ({navigation}) => {
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
                 <View style={styles.registerText}>
-                    <Text>Don't have an account?<TouchableOpacity style={{ color: '#fff' }}> Register Here</TouchableOpacity></Text>
+                    <Text>Don't have an account?<TouchableOpacity style={{ color: '#fff' }} onPress ={() => navigation.navigate('Register')}> Register Here</TouchableOpacity></Text>
                 </View>
 
                 <View>
@@ -88,7 +88,8 @@ const styles = StyleSheet.create({
     }
     ,
     buttonText: {
-        color: "#fff"
+        color: "#fff",
+        fontSize: 20
     },
     password: {
         color: '#fff',
