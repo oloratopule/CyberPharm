@@ -8,7 +8,8 @@ const signUp =((email,password, Confirmpassword)=>{
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
            
-            firebase.firestore().collection('User').doc(email).set({ 
+            firebase.firestore().collection('User').doc(email).set({
+               
                 email:email,
                 password:password})
             alert("Account succesfully created ")
