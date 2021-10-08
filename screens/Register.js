@@ -2,10 +2,9 @@ import React,{useState} from 'react';
 import { Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
 import signUp from '../auth/signUp'
 
-export default function Register() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [Confirmpassword, setConfirmpassword] = useState('');
+
+
+export default function Register({navigation}) {
     const RegisterUser = () => {
         signUp(email,password, Confirmpassword);
     }
@@ -32,7 +31,7 @@ export default function Register() {
                     <View style={styles.btn}>
                         <TouchableOpacity onPress={()=>RegisterUser()}><Text style={styles.text}>REGISTER</Text></TouchableOpacity>
                     </View>
-                    <Text style={styles.existing}>Existing User? <Text style={styles.login}>Login Here</Text></Text>
+                    <Text style={styles.existing}>Existing User? <Text style={styles.login} onPress ={() => navigation.navigate('Login')}>Login Here</Text></Text>
 
                 </View>
             </View>
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
 
     main: {
         backgroundColor: 'background: rgba(5, 78, 222, 0.7);',
-        height: '87%',
+        height: '86.7%',
         marginTop: 100,
         borderTopLeftRadius: 60,
         borderTopRightRadius: 60, 

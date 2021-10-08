@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, TextInput, ImageBackground, Button, TouchableOpacity } from 'react-native';
+import login from '../auth/login';
 
 const image = { uri: "../assets/bgOne.png" };
 const Login = () => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const logi = () => {
+        login(email, password);
+
+    }
+
     return (
 
 
@@ -10,17 +20,20 @@ const Login = () => {
             <View style={styles.card}>
                 <TextInput style={styles.input}
                     placeholder="Email"
+                    onChange={setEmail}
                 />
 
                 <TextInput style={styles.input}
                     placeholder="Password"
-                />
+                    onChange={setPassword}
+                    secureTextEntry={true}
+                    />
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={logi}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
                 <View style={styles.registerText}>
-                    <Text>Don't have an account?<TouchableOpacity style={{color: '#fff'}}> Register Here</TouchableOpacity></Text>
+                    <Text>Don't have an account?<TouchableOpacity style={{ color: '#fff' }}> Register Here</TouchableOpacity></Text>
                 </View>
 
                 <View>
@@ -41,11 +54,7 @@ const styles = StyleSheet.create({
         height: 898,
         width: 400
     },
-    // img: {
-    //     position: 'relative',
-    //     width: '450px',
-    //     height: '100%'
-    // },
+
     card: {
         width: '100%',
         justifyContent: 'center',
@@ -63,8 +72,8 @@ const styles = StyleSheet.create({
         marginTop: 15,
         width: 162,
         height: 52,
-        justifyContent:'center', 
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     input: {
         borderRadius: 20,
@@ -78,7 +87,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
     }
     ,
-    buttonText:{
+    buttonText: {
         color: "#fff"
     },
     password: {
