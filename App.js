@@ -8,7 +8,7 @@ import login from './auth/login';
 export default function App() {
   const login = () => {
 
-    login ("kb@gmail.com", "123456789")
+    login("kb@gmail.com", "123456789")
   }
   return (
     <View style={styles.container}>
