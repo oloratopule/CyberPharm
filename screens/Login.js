@@ -39,7 +39,7 @@ export default Login
 const styles = StyleSheet.create({
     container: {
         height: 898,
-        width: 400
+        // width: 400
     },
     // img: {
     //     position: 'relative',
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     //     height: '100%'
     // },
     card: {
-        width: '100%',
+        // width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(5, 78, 222, 0.7)',
