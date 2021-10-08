@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, TextInput, ImageBackground, Button, TouchableOpacity } from 'react-native';
 
 const image = { uri: "../assets/bgOne.png" };
-const Login = () => {
+const Login = ({navigation}) => {
     return (
 
 
