@@ -20,12 +20,12 @@ const Login = ({navigation}) => {
             <View style={styles.card}>
                 <TextInput style={styles.input}
                     placeholder="Email"
-                    onChange={setEmail}
+                    onChangeText={setEmail}
                 />
 
                 <TextInput style={styles.input}
                     placeholder="Password"
-                    onChange={setPassword}
+                    onChangeText={setPassword}
                     secureTextEntry={true}
                     />
 
