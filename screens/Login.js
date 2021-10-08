@@ -20,12 +20,12 @@ const Login = ({navigation}) => {
             <View style={styles.card}>
                 <TextInput style={styles.input}
                     placeholder="Email"
-                    onChange={setEmail}
+                    onChangeText={setEmail}
                 />
 
                 <TextInput style={styles.input}
                     placeholder="Password"
-                    onChange={setPassword}
+                    onChangeText={setPassword}
                     secureTextEntry={true}
                     />
 
@@ -37,8 +37,8 @@ const Login = ({navigation}) => {
                 </View>
 
                 <View>
-                    <TouchableOpacity>
-                        <Text style={styles.password}>Forgot Password!</Text>
+                    <TouchableOpacity style={styles.password} onPress ={() => navigation.navigate('ResetPassword')}>
+                        <Text  >Forgot Password!</Text>
                     </TouchableOpacity>
                 </View>
             </View>

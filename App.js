@@ -8,20 +8,24 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Login from './screens/Login';
 import Register from './screens/Register';
+import Home from './screens/Home';
 import ResetPassword from './screens/ResetPassword';
-
 const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
 
   return (
-    <NavigationContainer>
+      <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Register" component={Register} /> */}
+      <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+  
         <Stack.Screen name="ResetPassword" component={ResetPassword} />
 
       </Stack.Navigator>
     </NavigationContainer>
+    // <View>
+    //   <Home />
+    // </View>
   );
 }
 
