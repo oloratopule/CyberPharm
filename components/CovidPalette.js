@@ -1,26 +1,26 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
-import { Card } from 'react-native-paper';
+
 
 export default function CovidPalette() {
     return (
-        <View style={StyleSheet.iconContent}>
-            <Card>
+        <View style={styles.inner}>
+            <View>
                 <TouchableOpacity>
                     <Image
                         source={require('../assets/icon/covid19Card.png')}
                         style={styles.icon}
                     />
                 </TouchableOpacity>
-            </Card>
+            </View>
 
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    iconContent: {
+    inner: {
         justifyContent: 'center',
         alignItems: 'center',
     }
