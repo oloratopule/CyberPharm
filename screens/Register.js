@@ -1,15 +1,15 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
 import signUp from '../auth/signUp'
 
 
 
-export default function Register({navigation}) {
+export default function Register({ navigation }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [Confirmpassword, setConfirmpassword] = useState('')
     const RegisterUser = () => {
-        signUp(email,password, Confirmpassword);
+        signUp(email, password, Confirmpassword);
     }
     return (
         <ImageBackground source={require('../assets/pexels-anthony-shkraba-5214995 2.png')}>
@@ -32,9 +32,9 @@ export default function Register({navigation}) {
                     />
 
                     <View style={styles.btn}>
-                        <TouchableOpacity onPress={()=>RegisterUser()}><Text style={styles.text}>REGISTER</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => RegisterUser()}><Text style={styles.text}>REGISTER</Text></TouchableOpacity>
                     </View>
-                    <Text style={styles.existing}>Existing User? <Text style={styles.login} onPress ={() => navigation.navigate('Login')}>Login Here</Text></Text>
+                    <Text style={styles.existing}>Existing User? <Text style={styles.login} onPress={() => navigation.navigate('Login')}>Login Here</Text></Text>
 
                 </View>
             </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         height: '86.7%',
         marginTop: 100,
         borderTopLeftRadius: 60,
-        borderTopRightRadius: 60, 
+        borderTopRightRadius: 60,
         bottom: 10,
     },
     placeholder: {
