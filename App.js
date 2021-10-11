@@ -17,10 +17,9 @@ export default function App({ navigation }) {
       <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Register" component={Register} />
-  
+        <Stack.Screen name="Register" component={Register} /> 
+        <Stack.Screen name="Home" component={Home} /> 
         <Stack.Screen name="ResetPassword" component={ResetPassword} />
-
       </Stack.Navigator>
     </NavigationContainer>
     // <View>
