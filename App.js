@@ -23,10 +23,11 @@ export default function App({ navigation }) {
     //     <Stack.Screen name="Register" component={Register} /> 
     //     <Stack.Screen name="Home" component={Home} /> 
     //     <Stack.Screen name="ResetPassword" component={ResetPassword} />
-    //     <Stack.Screen name="Contact" component={Contact} />
+    //     <Stack.Screen name="Contacts" component={Contact} />
+    //     <Stack.Screen name="Contact Form" component={ContactForm} />
     //   </Stack.Navigator>
     // </NavigationContainer>
-    <View>
+    <View style={styles.container}>
       <Contact />
     </View>
   );
