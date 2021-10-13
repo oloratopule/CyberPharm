@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 const ContactItem = (props) => {
     return (
         <View style={styles.contactContainer}>
-            <Image style={styles.avatarIcon} source={require('../assets/ICONS/avatar.png')} />
+            <Image style={styles.avatarIcon} source={require('../assets/icon/avatar.png')} />
             <View>
                 <Text>{props.username}</Text>
                 <Text>{props.number}</Text>

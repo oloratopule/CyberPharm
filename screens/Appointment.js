@@ -11,7 +11,7 @@ import {
 export default function Appointment({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image style={styles.sos} source={require('../assets/nurse-g3c7d54faa_640.jpg')} />
+      <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
       <Text style={styles.name}>Dr. Bellamy Nicholas</Text>
       <Text style={styles.occupation}>Viralogist</Text>
       <View style={styles.cards}>

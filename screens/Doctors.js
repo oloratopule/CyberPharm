@@ -12,7 +12,7 @@ export default function Doctors({ navigation }) {
       <View style={styles.cards}>
         <View style={styles.card1}>
           <View>
-            <Image style={styles.sos} source={require('../assets/nurse-g3c7d54faa_640.jpg')}/>
+            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')}/>
           </View>
           <Text style={styles.name}  onPress ={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
           <Text style={styles.occupation}>Viralogist</Text>
@@ -20,7 +20,7 @@ export default function Doctors({ navigation }) {
         </View>
         <View style={styles.card2}>
           <View>
-            <Image style={styles.sos} source={require('../assets/nurse-g3c7d54faa_640.jpg')} />
+            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
           </View>
           <Text style={styles.name}>Dr. Bellamy N</Text>
           <Text style={styles.occupation}>Oncologists</Text>
@@ -31,7 +31,7 @@ export default function Doctors({ navigation }) {
       <View style={styles.cards}>
         <View style={styles.card1}>
           <View>
-            <Image style={styles.sos} source={require('../assets/nurse-g3c7d54faa_640.jpg')}  />
+            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')}  />
           </View>
           <Text style={styles.name}>Dr. Klimisch J</Text>
           <Text style={styles.occupation}>Surgeon</Text>
@@ -39,7 +39,7 @@ export default function Doctors({ navigation }) {
         </View>
         <View style={styles.card2}>
           <View>
-            <Image style={styles.sos} source={require('../assets/nurse-g3c7d54faa_640.jpg')} />
+            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
           </View>
           <Text style={styles.name}>Dr. Martinez K</Text>
           <Text style={styles.occupation}>Pedratrician</Text>
@@ -50,7 +50,7 @@ export default function Doctors({ navigation }) {
       <View style={styles.cards}>
         <View style={styles.card1}>
           <View>
-            <Image style={styles.sos} source={require('../assets/nurse-g3c7d54faa_640.jpg')} />
+            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
           </View>
           <Text style={styles.name}>Dr. Mark M</Text>
           <Text style={styles.occupation5}>Rheumatologists</Text>
@@ -58,7 +58,7 @@ export default function Doctors({ navigation }) {
         </View>
         <View style={styles.card2}>
           <View>
-            <Image style={styles.sos} source={require('../assets/nurse-g3c7d54faa_640.jpg')} />
+            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
           </View>
           <Text style={styles.name}>Dr. O'Boyle J</Text>
           <Text style={styles.occupation}>Radiologists</Text>
