@@ -12,7 +12,7 @@ export default function Register({ navigation }) {
         signUp(email, password, Confirmpassword);
     }
     return (
-        <ImageBackground source={require('../assets/pexels-anthony-shkraba-5214995 2.png')}>
+        <ImageBackground source={require('../assets/icon/backgroundImageRegister.png')}>
             <View style={styles.main}>
                 <View style={styles.form}>
                     <TextInput
