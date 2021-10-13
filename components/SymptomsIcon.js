@@ -1,21 +1,21 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 
-const SOSIcon = (props) => {
+const SymptomsIcon = () => {
     return (
         <View style={styles.iconContext}>
-            <Image style={styles.icon} source={require('../assets/icon/contact.png')} />
+            <Image style={styles.icon} source={require('../assets/icon/vaccine.png')} />
             <Text>{props.text}</Text>
         </View>
     )
 }
 
-export default SOSIcon
+export default SymptomsIcon
 
 const styles = StyleSheet.create({
     iconContext: {
         flexDirection: 'column',
-        textAlign:'center'
+        textAlign: 'center'
     }
     ,
     icon: {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View , TouchableOpacity} from 'react-native'
+import { StyleSheet, View, TouchableOpacity, ScrollView } from 'react-native'
 import HomePageText from '../components/HomePageText'
 import CovidPalette from '../components/CovidPalette'
 import SOSIcon from '../components/SOSIcon'
@@ -9,32 +9,41 @@ import VaccinateIcon from "../components/VaccinateIcon";
 import Book from "../components/Book";
 import Donate from "../components/Donate";
 import TipsBox1 from "../components/TipsBox1";
+import Contacts from './Contacts'
+import NotifyIcon from '../components/NotifyIcon'
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
 
     return (
         <View style={styles.homeContent}>
-            <View>
-                <HomePageText />
+            <View style={styles.top}>
+                <HomePageText style={styles.title} />
+                <SosButton />
+                <NotifyIcon />            
             </View>
-            <SosButton />
+
+
             <View>
                 <Search />
             </View>
-            <View style={styles.inconList}>
+
+            <ScrollView horizontal={true} contentContainerStyle={styles.inconList}>
                 <TouchableOpacity>
-                    <VaccinateIcon text="Vaccination"/>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Book text="Book Dr."/>
+                    <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Donate text="Donate"/>
+                    <Book text="Book Dr." />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => {navigation.navigate=(Home)}}>
-                    <SOSIcon text="Contacts"/>
+                <TouchableOpacity>
+                    <Donate text="Donate" />
                 </TouchableOpacity>
-            </View>
+                <TouchableOpacity onPress={() => { navigation.navigate = (Contacts) }}>
+                    <SOSIcon text="Contacts" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => { navigation.navigate = (Home) }}>
+                    <VaccinateIcon text="Symptom" />
+                </TouchableOpacity>
+            </ScrollView>
 
             <TouchableOpacity>
                 <CovidPalette />
@@ -48,9 +57,9 @@ const Home = ({navigation}) => {
                     <TipsBox1 />
                 </TouchableOpacity>
             </View>
-            
-            
-           
+
+
+
         </View>
     )
 }
@@ -60,8 +69,17 @@ export default Home
 const styles = StyleSheet.create({
     homeContent: {
         justifyContent: 'center',
-        alignItems: 'left'
-    },
+        alignItems: 'center'
+    }
+    ,
+    top: {
+        flexDirection: 'row'
+    }
+    ,
+    title: {
+        marginRight: 20
+    }
+    ,
     tipsBoxContainer: {
         flexDirection: 'row'
     }
