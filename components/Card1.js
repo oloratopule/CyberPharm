@@ -38,7 +38,7 @@ export default function Card1() {
                     <Text
                         style={{
                             color: 'white',
-                            paddingLeft: 2j0,
+                            paddingLeft: 20,
                             paddingTop: 20,
                             fontSize: 12,
                         }}>
