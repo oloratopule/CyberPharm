@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 
-const SymptomsIcon = () => {
+const SymptomsIcon = (props) => {
     return (
         <View style={styles.iconContext}>
-            <Image style={styles.icon} source={require('../assets/icon/vaccine.png')} />
+            <Image style={styles.icon} source={require('../assets/icon/symptoms.png')} />
             <Text>{props.text}</Text>
         </View>
     )

@@ -1,8 +1,11 @@
 import React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View, TouchableOpacity, ScrollView } from 'react-native'
 import HomePageText from '../components/HomePageText'
 import CovidPalette from '../components/CovidPalette'
 import SOSIcon from '../components/SOSIcon'
+import SymptomsIcon from '../components/SymptomsIcon';
 import Search from '../components/Search'
 import SosButton from "../components/SosButton";
 import VaccinateIcon from "../components/VaccinateIcon";
@@ -11,6 +14,7 @@ import Donate from "../components/Donate";
 import TipsBox1 from "../components/TipsBox1";
 import Contacts from './Contacts'
 import NotifyIcon from '../components/NotifyIcon'
+import SymptopmChecker from './SymptopmChecker'
 
 const Home = ({ navigation }) => {
 
@@ -19,7 +23,7 @@ const Home = ({ navigation }) => {
             <View style={styles.top}>
                 <HomePageText style={styles.title} />
                 <SosButton />
-                <NotifyIcon />            
+                <NotifyIcon />
             </View>
 
 
@@ -29,19 +33,19 @@ const Home = ({ navigation }) => {
 
             <ScrollView horizontal={true} contentContainerStyle={styles.inconList}>
                 <TouchableOpacity>
-                    <VaccinateIcon text="Vaccination" />
+                    <VaccinateIcon text="Vaccination"/>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Appointment')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity >
                     <Donate text="Donate" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => { navigation.navigate = (Contacts) }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
                     <SOSIcon text="Contacts" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => { navigation.navigate = (Home) }}>
-                    <VaccinateIcon text="Symptom" />
+                <TouchableOpacity onPress={() => navigation.navigate('Symptom')}>
+                    <SymptomsIcon text="Symptom" />
                 </TouchableOpacity>
             </ScrollView>
 
