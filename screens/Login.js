@@ -8,15 +8,15 @@ const Login = ({navigation}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const logi = (navigation) => {
-        login(email, password,navigation);
+    const logi = () => {
+        login(email, password, navigation);
 
     }
 
     return (
 
 
-        <ImageBackground source={require('../assets/bgOne.png')} style={styles.container}>
+        <ImageBackground source={require('../assets/icon/bgOne.png')} style={styles.container}>
             <View style={styles.card}>
                 <TextInput style={styles.input}
                     placeholder="Email"

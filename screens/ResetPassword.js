@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
-import resetPassword from '../auth/resetPassword'
+import SendPasswordResetMail from '../auth/sendPasswordResetMail';
 
 export default function ResetPassword() {
     const [email, setEmail] = useState('')
+
+    const resetEmail = () => {
+        SendPasswordResetMail()
+    }
 
     const reset = (email) => {
         resetPassword(email)
@@ -21,7 +25,7 @@ export default function ResetPassword() {
             />
 
             <View style={styles.btn}>
-                <TouchableOpacity onPres={() => reset()}>
+                <TouchableOpacity onPress={() => resetEmail()}>
                     <Text style={styles.send}>Send Verification Email</Text>
                 </TouchableOpacity>
             </View>

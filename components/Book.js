@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
     icon: {
         width: 80,
         height: 80,
-        backgroundColor: '#fff',
         marginTop: 10
     }
 })
