@@ -1,75 +1,30 @@
 import React from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native'
+import ContactItem from '../components/ContactItem'
 
 const Contacts = () => {
     return (
-        <View style={styles.container}>
+        <ScrollView horizontal={false} style={styles.container}>
+                <TextInput style={styles.search} placeholder="Search..." />
 
-            <View style={styles.search}>
-                <TextInput
-                    placeholder="Search..."
-                />
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                
 
-                <TouchableOpacity>
-                    <Image source={require('../assets/icon/delete-sign (1).png')} style={styles.delete} />
+                <TouchableOpacity style={styles.addIconContainer}>
+                    <Image style={styles.addIcon} source={require('../assets/icon/add.png')} />
                 </TouchableOpacity>
-
-                <TouchableOpacity>
-                    <Image source={require('../assets/icon/menu-2.png')} style={styles.menu} />
-                </TouchableOpacity>
-            </View>
-
-            <br />
-
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../assets/icon/user-male-circle.png')} style={{ width: 60, height: 60, }} />
-                <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
-                <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
-                <TouchableOpacity>
-                    <Image source={require('../assets/icon/phone.png')} style={styles.phone} />
-                </TouchableOpacity>
-            </View>
-
-            <br />
-
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../assets/icon/user-male-circle.png')} style={{ width: 60, height: 60, }} />
-                <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
-                <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
-                <TouchableOpacity>
-                    <Image source={require('../assets/icon/phone.png')} style={styles.phone} />
-                </TouchableOpacity>
-            </View>
-
-            <br />
-
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../assets/icon/user-male-circle.png')} style={{ width: 60, height: 60, }} />
-                <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
-                <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
-                <TouchableOpacity>
-                    <Image source={require('../assets/icon/phone.png')} style={styles.phone} />
-                </TouchableOpacity>
-            </View>
-
-            <br />
-
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../assets/icon/user-male-circle.png')} style={{ width: 60, height: 60, }} />
-                <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
-                <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
-                <TouchableOpacity>
-                    <Image source={require('../assets/icon/phone.png')} style={styles.phone} />
-                </TouchableOpacity>
-            </View>
-
-            <View>
-                <TouchableOpacity>
-                    <Image source={require('../assets/icon/plus.png')} style={styles.plusSign} />
-                </TouchableOpacity>
-            </View>
-
-        </View>
+        </ScrollView>
     )
 }
 
@@ -77,8 +32,8 @@ export default Contacts
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        padding: 8,
+        height:'100%', 
+        alignSelf:'center'
     },
     search: {
         flexDirection: 'row',
@@ -91,28 +46,33 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop: 10,
     },
-    delete: {
+    delete1: {
         width: 18,
         height: 18,
         marginHorizontal: 140,
         marginTop: 5,
     },
-    menu: {
-        width: 15,
+    delete: {
+        width: 20,
         height: 20,
-        marginHorizontal: -140,
-        marginTop: 5,
-    },
-    phone: {
-        width: 30,
-        height: 30,
-        marginTop: 17,
-        marginLeft: 130,
+        marginTop: 25,
+        marginLeft: 80,
     },
     plusSign: {
         marginTop: 280,
         marginHorizontal: 260,
-        width: 80,
-        height: 80,
+        width: 60,
+        height: 60,
+    }
+    ,
+    addIconContainer: {
+        position: 'absolute',
+        top: 740,
+        left: 290
+    }
+    ,
+    addIcon: {
+        width: 60,
+        height: 60,
     }
 });

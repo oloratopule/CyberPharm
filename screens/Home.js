@@ -10,7 +10,8 @@ import Book from "../components/Book";
 import Donate from "../components/Donate";
 import TipsBox1 from "../components/TipsBox1";
 
-const Home = () => {
+const Home = ({navigation}) => {
+
     return (
         <View style={styles.homeContent}>
             <View>
@@ -30,7 +31,7 @@ const Home = () => {
                 <TouchableOpacity>
                     <Donate text="Donate"/>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {navigation.navigate=(Home)}}>
                     <SOSIcon text="Contacts"/>
                 </TouchableOpacity>
             </View>
