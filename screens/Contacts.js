@@ -19,6 +19,45 @@ const Contacts = () => {
                 <View>
                     <ContactItem username={'Steve'} number={'+27718752396'} />
                 </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Steve'} number={'+27718752396'} />
+                </View>
+                
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Steve'} number={'+27718752396'} />
+                </View>
+                
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Thato'} number={'+27718752396'} />
+                </View>
+                <View>
+                    <ContactItem username={'Steve'} number={'+27718752396'} />
+                </View>
+                
                 
 
                 <TouchableOpacity style={styles.addIconContainer}>
