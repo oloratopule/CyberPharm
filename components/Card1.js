@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Image, Text, StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-paper'
 import Constants from 'expo-constants';
-export default function App() {
+
+export default function Card1() {
     const styleTypes = ['default', 'dark-content', 'light-content'];
     const [visibleStatusBar, setVisibleStatusBar] = useState(false);
     const [styleStatusBar, setStyleStatusBar] = useState(styleTypes[0]);
-    const changeVisibilityStatusBar = () => {setVisibleStatusBar(!visibleStatusBar)};
+    const changeVisibilityStatusBar = () => { setVisibleStatusBar(!visibleStatusBar) };
     const changeStyleStatusBar = () => {
         const styleId = styleTypes.indexOf(styleStatusBar) + 1;
         if (styleId === styleTypes.length) {
@@ -16,8 +17,6 @@ export default function App() {
     };
     return (
         <View style={styles.container}>
-
-
             <TouchableOpacity title="topNav" onPress={() => changeVisibilityStatusBar()} >
                 <Image style={styles.icon} source={require('../assets/icon/notification.png')} />
             </TouchableOpacity>
@@ -25,11 +24,11 @@ export default function App() {
             {!visibleStatusBar ? (
                 <View></View>
             )
-                : //Hidden Step-by-steps
+                : 
                 <Card
                     style={{
-                        width: 280,
-                        height: 300,
+                        width: 300,
+                        height: 200,
                         marginLeft: 20,
                         borderRadius: 20,
                         backgroundColor: '#1597E5',
@@ -38,10 +37,10 @@ export default function App() {
 
                     <Text
                         style={{
-                            color:'white',
-                            paddingLeft: 10,
-                            paddingTop: 10,
-                            fontSize: 16,
+                            color: 'white',
+                            paddingLeft: 2j0,
+                            paddingTop: 20,
+                            fontSize: 12,
                         }}>
                         Notification 1
                     </Text>
@@ -54,12 +53,12 @@ export default function App() {
                             width: 255,
                         }}>
 
-                        {/*Note Text2*/}
+
                         <Text style={{
-                            color:'white',
+                            color: 'white',
                             paddingLeft: 10,
                             paddingTop: 10,
-                            fontSize: 16,
+                            fontSize: 12,
                         }}>
                             Notification on First Update
                         </Text>
@@ -74,22 +73,21 @@ export default function App() {
                             width: 255,
                         }}>
 
-                       
+
                         <Text style={{
-                            color:'white',
+                            color: 'white',
                             paddingLeft: 10,
                             paddingTop: 10,
-                            fontSize: 16,
+                            fontSize: 12,
                         }}>
                             Notification 2
                         </Text>
 
-                        {/*Note Text4*/}
                         <Text style={{
-                            color:'white',
+                            color: 'white',
                             paddingLeft: 10,
                             paddingTop: 10,
-                            fontSize: 16,
+                            fontSize: 12,
                         }}>
                             Notification on Second Update
                         </Text>
@@ -104,22 +102,20 @@ export default function App() {
                             width: 255,
                         }}>
 
-                       
                         <Text style={{
-                            color:'white',
+                            color: 'white',
                             paddingLeft: 10,
                             paddingTop: 10,
-                            fontSize: 16,
+                            fontSize: 12,
                         }}>
                             Notification 3
                         </Text>
 
-                        {/*Note Text4*/}
                         <Text style={{
-                            color:'white',
+                            color: 'white',
                             paddingLeft: 10,
                             paddingTop: 10,
-                            fontSize: 16,
+                            fontSize: 12,
                         }}>
                             Notification on Third Update
                         </Text>
@@ -141,9 +137,8 @@ const styles = StyleSheet.create({
 
         padding: 8,
     },
-    buttonContainer: {
-        padding: 10,
-    },
+
+
     textStyle: {
         textAlign: 'center',
     },
@@ -152,8 +147,9 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         backgroundColor: '#fff',
-        marginTop: -20,
-        marginLeft: 300,
+        marginTop: 25,
+        left: 120
+
 
 
     },

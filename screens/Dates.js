@@ -3,12 +3,12 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
   TextInput,
-  Picker
+  Picker,
+  RadioButton
 } from 'react-native';
 
 
