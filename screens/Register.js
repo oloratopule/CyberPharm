@@ -8,8 +8,8 @@ export default function Register({navigation}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [Confirmpassword, setConfirmpassword] = useState('')
-    const RegisterUser = () => {
-        signUp(email,password, Confirmpassword);
+    const RegisterUser = (navigation) => {
+        signUp(email,password, Confirmpassword,navigation);
     }
     return (
         <ImageBackground source={require('../assets/pexels-anthony-shkraba-5214995 2.png')}>
@@ -32,7 +32,7 @@ export default function Register({navigation}) {
                     />
 
                     <View style={styles.btn}>
-                        <TouchableOpacity onPress={()=>RegisterUser()}><Text style={styles.text}>REGISTER</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>RegisterUser(navigation)}><Text style={styles.text}>REGISTER</Text></TouchableOpacity>
                     </View>
                     <Text style={styles.existing}>Existing User? <Text style={styles.login} onPress ={() => navigation.navigate('Login')}>Login Here</Text></Text>
 

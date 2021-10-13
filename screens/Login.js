@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, TextInput, ImageBackground, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
 import login from '../auth/login';
 
 const image = { uri: "../assets/bgOne.png" };
@@ -8,8 +8,8 @@ const Login = ({navigation}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const logi = () => {
-        login(email, password);
+    const logi = (navigation) => {
+        login(email, password,navigation);
 
     }
 
@@ -29,7 +29,7 @@ const Login = ({navigation}) => {
                     secureTextEntry={true}
                     />
 
-                <TouchableOpacity style={styles.button} onPress={logi}>
+                <TouchableOpacity style={styles.button} onPress={()=>logi(navigation)}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
                 <View style={styles.registerText}>
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     },
 
     card: {
-        // width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(5, 78, 222, 0.7)',

@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 40,
         margin: 10, 
+        marginLeft:'auto',
+        marginRight:'auto'
         
 
     }
