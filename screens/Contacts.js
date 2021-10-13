@@ -11,61 +11,61 @@ const Contacts = () => {
                 />
 
                 <TouchableOpacity>
-                    <Image source={require('../assets/ICONS/delete-sign (1).png')} style={styles.delete} />
+                    <Image source={require('../assets/icon/delete-sign (1).png')} style={styles.delete} />
                 </TouchableOpacity>
 
                 <TouchableOpacity>
-                    <Image source={require('../assets/ICONS/menu-2.png')} style={styles.menu} />
-                </TouchableOpacity>
-            </View>
-
-            <br />
-
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../assets/ICONS/user-male-circle.png')} style={{ width: 60, height: 60, }} />
-                <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
-                <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
-                <TouchableOpacity>
-                    <Image source={require('../assets/ICONS/phone.png')} style={styles.phone} />
+                    <Image source={require('../assets/icon/menu-2.png')} style={styles.menu} />
                 </TouchableOpacity>
             </View>
 
             <br />
 
             <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../assets/ICONS/user-male-circle.png')} style={{ width: 60, height: 60, }} />
+                <Image source={require('../assets/icon/user-male-circle.png')} style={{ width: 60, height: 60, }} />
                 <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
                 <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
                 <TouchableOpacity>
-                    <Image source={require('../assets/ICONS/phone.png')} style={styles.phone} />
+                    <Image source={require('../assets/icon/phone.png')} style={styles.phone} />
                 </TouchableOpacity>
             </View>
 
             <br />
 
             <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../assets/ICONS/user-male-circle.png')} style={{ width: 60, height: 60, }} />
+                <Image source={require('../assets/icon/user-male-circle.png')} style={{ width: 60, height: 60, }} />
                 <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
                 <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
                 <TouchableOpacity>
-                    <Image source={require('../assets/ICONS/phone.png')} style={styles.phone} />
+                    <Image source={require('../assets/icon/phone.png')} style={styles.phone} />
                 </TouchableOpacity>
             </View>
 
             <br />
 
             <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../assets/ICONS/user-male-circle.png')} style={{ width: 60, height: 60, }} />
+                <Image source={require('../assets/icon/user-male-circle.png')} style={{ width: 60, height: 60, }} />
                 <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
                 <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
                 <TouchableOpacity>
-                    <Image source={require('../assets/ICONS/phone.png')} style={styles.phone} />
+                    <Image source={require('../assets/icon/phone.png')} style={styles.phone} />
+                </TouchableOpacity>
+            </View>
+
+            <br />
+
+            <View style={{ flexDirection: 'row' }}>
+                <Image source={require('../assets/icon/user-male-circle.png')} style={{ width: 60, height: 60, }} />
+                <Text style={{ marginTop: 12, }}>Babur Mavlonov</Text>
+                <Text style={{ marginTop: 32, marginLeft: -104 }}>+99897 565 7173</Text>
+                <TouchableOpacity>
+                    <Image source={require('../assets/icon/phone.png')} style={styles.phone} />
                 </TouchableOpacity>
             </View>
 
             <View>
                 <TouchableOpacity>
-                    <Image source={require('../assets/ICONS/plus.png')} style={styles.plusSign} />
+                    <Image source={require('../assets/icon/plus.png')} style={styles.plusSign} />
                 </TouchableOpacity>
             </View>
 
