@@ -8,7 +8,6 @@ import {
   ScrollView,
   TextInput,
   Picker,
-  RadioButton
 } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 

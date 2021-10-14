@@ -13,7 +13,7 @@ import Book from "../components/Book";
 import Donate from "../components/Donate";
 import TipsBox1 from "../components/TipsBox1";
 import Contacts from './Contacts'
-import Card1 from '../components/Card1'
+import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
 
 const Home = ({ navigation }) => {
@@ -23,7 +23,7 @@ const Home = ({ navigation }) => {
             <View style={styles.top}>
                 <HomePageText style={styles.title} />
                 <SosButton />
-                <Card1 />
+                <NotificationCenter />
             </View>
 
             <View>
