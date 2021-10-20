@@ -34,7 +34,7 @@ export default function Appointment({ navigation }) {
             style={styles.icon}
           />
           <Text style={styles.number}>10 Yrs</Text>
-          <Text style={styles.heading}>Experience</Text>
+          <Text style={{color:'white', marginLeft:'13px'}}>Experience</Text>
         </View>
 
         <View style={styles.ratings}>
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   number: {
-    marginLeft: 25,
+    marginLeft: 20,
     marginTop: 15,
     fontWeight: 'bold',
     fontSize: 17,
