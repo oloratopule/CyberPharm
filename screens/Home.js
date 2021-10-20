@@ -1,12 +1,11 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, View, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, ScrollView, SafeAreaView, Modal } from 'react-native'
 import HomePageText from '../components/HomePageText'
 import CovidPalette from '../components/CovidPalette'
 import SOSIcon from '../components/SOSIcon'
 import SymptomsIcon from '../components/SymptomsIcon';
-import Search from '../components/Search'
 import SosButton from "../components/SosButton";
 import VaccinateIcon from "../components/VaccinateIcon";
 import Book from "../components/Book";
@@ -15,22 +14,25 @@ import TipsBox1 from "../components/TipsBox1";
 import Contact from './Contact'
 import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
+import NavBar from '../components/NavBar'
+
 
 const Home = ({ navigation }) => {
 
     return (
-        <View style={styles.homeContent}>
+        <SafeAreaView style={styles.homeContent}>
             <View style={styles.top}>
                 <HomePageText style={styles.title} />
                 <SosButton />
                 <NotificationCenter />
             </View>
 
-            <View>
-                <Search />
-            </View>
+            <ScrollView
+                horizontal={true}
+                pagingEnabled={true}
+                showsHorizontalScrollIndicator={false}
+                ContenContainerStyle={styles.scrollContainer}>
 
-            <ScrollView horizontal={true} contentContainerStyle={styles.inconList}>
                 <TouchableOpacity>
                     <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
@@ -48,6 +50,8 @@ const Home = ({ navigation }) => {
                 </TouchableOpacity>
             </ScrollView>
 
+
+
             <TouchableOpacity>
                 <CovidPalette />
             </TouchableOpacity>
@@ -55,18 +59,13 @@ const Home = ({ navigation }) => {
 
 
 
-            <View style={styles.tipsBoxContainer}>
-                <TouchableOpacity>
-                    <TipsBox1 />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <TipsBox1 />
-                </TouchableOpacity>
+            <View>
+                <NavBar />
             </View>
 
 
 
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -90,7 +89,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     }
     ,
-    inconList: {
+    scrollContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'

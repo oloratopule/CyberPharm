@@ -6,7 +6,7 @@ export default class SosButton extends Component {
         return (
             <View>
                 <TouchableOpacity>
-                    <Image style={styles.sosIcon} source={require('../assets/icon/StopIcon.png')} />
+                    <Image style={styles.sosIcon} source={require('../assets/icon/SosIcon.png')} />
                 </TouchableOpacity>
 
 
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     sosIcon: {
         width: 20,
         height: 20,
-        marginTop: 40,
+        marginTop: 27,
         left: 110,
         marginLeft: 5,
         marginRight: 5,
