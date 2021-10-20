@@ -11,7 +11,7 @@ import VaccinateIcon from "../components/VaccinateIcon";
 import Book from "../components/Book";
 import Donate from "../components/Donate";
 import TipsBox1 from "../components/TipsBox1";
-import Contacts from '../screens/Contacts'
+import Contact from './Contact'
 import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
 import NavBar from '../components/NavBar'
@@ -36,7 +36,7 @@ const Home = ({ navigation }) => {
                 <TouchableOpacity>
                     <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Appointment')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Doctors')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
                 <TouchableOpacity >
