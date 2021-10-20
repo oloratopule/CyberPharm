@@ -29,7 +29,7 @@ const Login = ({navigation}) => {
                     secureTextEntry={true}
                     />
 
-                <TouchableOpacity style={styles.button} onPress={logi}>
+                <TouchableOpacity style={styles.button} onPress={()=>logi(navigation)}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
                 <View style={styles.registerText}>
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     },
 
     card: {
-        // width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(5, 78, 222, 0.7)',

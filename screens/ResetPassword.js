@@ -9,6 +9,9 @@ export default function ResetPassword() {
         SendPasswordResetMail()
     }
 
+    const reset = (email) => {
+        resetPassword(email)
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.head}>Reset Password</Text>
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
         marginTop: 45,
         borderRadius: 20,
         paddingLeft: 15,
-        color: 'white'
+        color: 'black'
     },
     btn: {
         backgroundColor: 'background: rgba(80, 131, 232, 1);',

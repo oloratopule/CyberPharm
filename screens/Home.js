@@ -12,8 +12,8 @@ import VaccinateIcon from "../components/VaccinateIcon";
 import Book from "../components/Book";
 import Donate from "../components/Donate";
 import TipsBox1 from "../components/TipsBox1";
-import Contacts from './Contacts'
-import NotifyIcon from '../components/NotifyIcon'
+import Contact from './Contact'
+import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
 
 const Home = ({ navigation }) => {
@@ -23,12 +23,12 @@ const Home = ({ navigation }) => {
             <View style={styles.top}>
                 <HomePageText style={styles.title} />
                 <SosButton />
-                <NotifyIcon />
+                <NotificationCenter />
             </View>
-
 
             <View>
                 <Search />
+                
             </View>
 
             <ScrollView horizontal={true} contentContainerStyle={styles.inconList}>
@@ -52,6 +52,9 @@ const Home = ({ navigation }) => {
             <TouchableOpacity>
                 <CovidPalette />
             </TouchableOpacity>
+        
+        
+            
 
             <View style={styles.tipsBoxContainer}>
                 <TouchableOpacity>
@@ -103,5 +106,22 @@ const styles = StyleSheet.create({
     ,
     navItem: {
         alignSelf: 'center'
-    }
+    },
+
+    alert:{
+        marginTop: -229
+    },
+
+    
+
+    icon2: {
+        width: 20,
+        height:20,
+        backgroundColor: '#fff',
+        marginTop:-20,
+        marginLeft:300,
+        paddingTop:50
+       
+       
+    },
 })

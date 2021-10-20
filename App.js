@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -6,7 +5,6 @@ import SymptopmChecker from './screens/SymptopmChecker';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Home from './screens/Home';
@@ -15,7 +13,7 @@ import SOS from './screens/SOS';
 import Doctors from './screens/Doctors';
 import Appointment from './screens/Appointment';
 import Dates from './screens/Dates';
-import Contact from './screens/Contacts';
+import Contact from './screens/Contact';
 import ContactForm from './screens/ContactForm';
 import Vaccination from './screens/Vaccination';
 import DonateBlood from './screens/DonateBlood';

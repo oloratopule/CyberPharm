@@ -3,12 +3,11 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
   TextInput,
-  Picker
+  Picker,
 } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 

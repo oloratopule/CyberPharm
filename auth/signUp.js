@@ -1,7 +1,8 @@
   
+import { NavigationContainer } from '@react-navigation/native'
 import {firebase} from '../config/firebase'
 
-const signUp =((email,password, Confirmpassword)=>{
+const signUp =((email,password, Confirmpassword,Navigation)=>{
     if(Confirmpassword !== password){
         alert("password doen't match")
     }else {
@@ -14,6 +15,7 @@ const signUp =((email,password, Confirmpassword)=>{
                 password:password})
             alert("Account succesfully created ")
           var user = userCredential.user;
+          Navigation.navigate("Login")
         
         })
         .catch((error) => {
