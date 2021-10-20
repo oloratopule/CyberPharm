@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 const Donate = (props) => {
     return (
         <View style={styles.iconContext}>
-            <Image style={styles.icon} source={require('../assets/icon/donate.png')} />
+            <Image style={styles.icon} source={require('../assets/icon/donateBlood.png')} />
             <Text>{props.text}</Text>
         </View>
     )

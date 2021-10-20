@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 const VaccinateIcon = (props) => {
     return (
         <View style={styles.iconContext}>
-            <Image style={styles.icon} source={require('../assets/icon/vaccine.png')} />
+            <Image style={styles.icon} source={require('../assets/icon/vaccinate.png')} />
             <Text>{props.text}</Text>
         </View>
     )
@@ -15,7 +15,8 @@ export default VaccinateIcon
 const styles = StyleSheet.create({
     iconContext: {
         flexDirection: 'column',
-        textAlign:'center'
+        textAlign:'center',
+        marginLeft:30
     }
     ,
     icon: {

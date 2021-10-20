@@ -1,10 +1,12 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 export default function HomePageText() {
     return (
-        <View style={styles.textIcon}>
-            <Image style={styles.textIcon} source={require('../assets/icon/HomePageText.png')} />
+        <View>
+            <Text style={styles.font}>
+                Home
+            </Text>
 
         </View>
 
@@ -14,14 +16,15 @@ export default function HomePageText() {
 const styles = StyleSheet.create({
 
 
-    textIcon: {
+    font: {
 
-        marginLeft: -60,
-        textAlign: 'left',
-        width: 96,
-        height: 20,
-        marginTop: 20,
-        marginBottom: 40
+       fontSize:18,
+       fontFamily:'',
+       fontWeight:'light',
+       marginTop:25,
+       alignContent:'center',
+       alignSelf:'left',
+       
     },
 
 })

@@ -1,39 +1,40 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, View, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, ScrollView, SafeAreaView, Modal } from 'react-native'
 import HomePageText from '../components/HomePageText'
 import CovidPalette from '../components/CovidPalette'
 import SOSIcon from '../components/SOSIcon'
 import SymptomsIcon from '../components/SymptomsIcon';
-import Search from '../components/Search'
 import SosButton from "../components/SosButton";
 import VaccinateIcon from "../components/VaccinateIcon";
 import Book from "../components/Book";
 import Donate from "../components/Donate";
 import TipsBox1 from "../components/TipsBox1";
-import Contacts from './Contacts'
+import Contacts from '../screens/Contacts'
 import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
+import NavBar from '../components/NavBar'
+
 
 const Home = ({ navigation }) => {
 
     return (
-        <View style={styles.homeContent}>
+        <SafeAreaView style={styles.homeContent}>
             <View style={styles.top}>
                 <HomePageText style={styles.title} />
                 <SosButton />
                 <NotificationCenter />
             </View>
 
-            <View>
-                <Search />
-                
-            </View>
+            <ScrollView
+                horizontal={true}
+                pagingEnabled={true}
+                showsHorizontalScrollIndicator={false}
+                ContenContainerStyle={styles.scrollContainer}>
 
-            <ScrollView horizontal={true} contentContainerStyle={styles.inconList}>
                 <TouchableOpacity>
-                    <VaccinateIcon text="Vaccination"/>
+                    <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Appointment')}>
                     <Book text="Book Dr." />
@@ -49,25 +50,22 @@ const Home = ({ navigation }) => {
                 </TouchableOpacity>
             </ScrollView>
 
+
+
             <TouchableOpacity>
                 <CovidPalette />
             </TouchableOpacity>
-        
-        
-            
 
-            <View style={styles.tipsBoxContainer}>
-                <TouchableOpacity>
-                    <TipsBox1 />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <TipsBox1 />
-                </TouchableOpacity>
+
+
+
+            <View>
+                <NavBar />
             </View>
 
 
 
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -91,7 +89,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     }
     ,
-    inconList: {
+    scrollContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
@@ -108,20 +106,20 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
 
-    alert:{
+    alert: {
         marginTop: -229
     },
 
-    
+
 
     icon2: {
         width: 20,
-        height:20,
+        height: 20,
         backgroundColor: '#fff',
-        marginTop:-20,
-        marginLeft:300,
-        paddingTop:50
-       
-       
+        marginTop: -20,
+        marginLeft: 300,
+        paddingTop: 50
+
+
     },
 })

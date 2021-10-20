@@ -19,7 +19,7 @@ export default function NotificationCenter() {
     return (
         <View style={styles.container}>
             <TouchableOpacity title="topNav" onPress={() => changeVisibilityStatusBar()} >
-                <Image style={styles.icon} source={require('../assets/icon/notification.png')} />
+                <Image style={styles.icon} source={require('../assets/icon/notify.png')} />
             </TouchableOpacity>
 
             {!visibleStatusBar ? (
@@ -62,24 +62,35 @@ const styles = StyleSheet.create({
     ,
     textStyle: {
         textAlign: 'center',
-    }
-    ,
+        color:'white'
+
+    },
+    
+    
     icon: {
         width: 20,
         height: 20,
-        marginTop: 25,
+        marginTop: 28,
         left: 120
     }
     ,
     notify: {
-        padding: 15
+        padding: 15,
+        backgroundColor:'#1597E5',
+        fontWeight:'bold',
+       
+        
+        
     }
     ,
     notificationArea: {
-        maxHeight: 380,
+        height:100,
+        width:300,
         borderWidth: 1,
         borderColor: 1,
-        padding: 10,
-        zIndex: 1
+      marginTop:180,
+       position:'absolute',
+       color:"white"
+       
     }
 });

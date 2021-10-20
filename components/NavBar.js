@@ -5,13 +5,7 @@ const Navbar = () => {
     return (
         <View style={styles.NavContainer}>
             <TouchableOpacity>
-                <Image style={styles.icon} source={require('../assets/icon/home.png')} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-                <Image style={styles.icon} source={require('../assets/icon/location.png')} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-                <Image style={styles.icon} source={require('../assets/icon/chat.png')} />
+                <Image style={styles.icon} source={require('../assets/icon/locate.png')} />
             </TouchableOpacity>
         </View>
     )
@@ -31,10 +25,13 @@ const styles = StyleSheet.create({
     }
     ,
     icon: {
-        width: 30,
-        height: 30,
+        width: 360,
+        height: 80,
         backgroundColor: '#054EDE',
         marginLeft: 40,
         marginRight: 20, 
+        marginTop:60,
+        borderRadius:20
+        
     }
 })
