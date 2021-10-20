@@ -7,19 +7,19 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Contacts = ({ navigation }) => {
 
-    // const [firstName, setFirstName] = useState();
-    // const [lastName, setLastName] = useState();
-    // const [phoneNumber, setPhoneNumber] = useState();
-    // const [email, setEmail] = useState();
+    const [firstName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [phoneNumber, setPhoneNumber] = useState();
+    const [email, setEmail] = useState();
     
-    // const [contact, setContact] = useState([
-    //     {
-    //         fname: firstName,
-    //         lname: lastName,
-    //         phone: phoneNumber,
-    //         mail: email
-    //     }
-    // ])
+    const [contact, setContact] = useState([
+        {
+            fname: firstName,
+            lname: lastName,
+            phone: phoneNumber,
+            mail: email
+        }
+    ])
 
     return (
         <ScrollView horizontal={false} style={styles.container}>
@@ -32,7 +32,7 @@ const Contacts = ({ navigation }) => {
             })}
 
 
-            <TouchableOpacity style={styles.addIconContainer} onPress={() => navigation.navigate('Form')}>
+            <TouchableOpacity style={styles.addIconContainer} onPress={() => navigation.navigate('Contacts')}>
                 <Image style={styles.addIcon} source={require('../assets/icon/add.png')} />
             </TouchableOpacity>
         </ScrollView>

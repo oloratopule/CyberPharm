@@ -9,12 +9,10 @@ const ContactForm = () => {
     const [phoneNumber, setPhoneNumber] = useState();
     const [email, setEmail] = useState();
 
-    function save(fn, ln, pn, em) {
-        firstName = fn;
-        lastName = ln;
-        email = em;
-        phone = pn;
-        savingContact(firstName, lastName, email, phone)
+    function save() {
+      
+       
+        savingContact("1", "2" , "3", "4");
     }
 
     return (
@@ -27,7 +25,8 @@ const ContactForm = () => {
                         <TextInput
                             placeholder="Enter name"
                             style={styles.input}
-                   /*{ onChangeText={setFirstName(firstName)}}*/ />
+                            onCha
+                            onChangeText={(firstName) => setFirstName(firstName)} />
                     </View>
 
                     <View>
@@ -35,7 +34,7 @@ const ContactForm = () => {
                         <TextInput
                             placeholder="Enter surname"
                             style={styles.input}
-               /*     onChangeText={setLastName(lastName)} */ />
+                            onChangeText={(lastName) => setLastName(lastName)} />
                     </View>
 
                     <View>
@@ -43,7 +42,7 @@ const ContactForm = () => {
                         <TextInput
                             placeholder="Enter email"
                             style={styles.input}
-               /*     onChangeText={setEmail(email)} */ />
+                            onChangeText={(email) => setEmail(email)} />
                     </View>
 
                     <View>
@@ -51,12 +50,12 @@ const ContactForm = () => {
                         <TextInput
                             placeholder="+998 -- --- -- --"
                             style={styles.input}
-                /*    onChangeText={setPhoneNumber(phoneNumber)} */ />
+                            onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)} />
                     </View>
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={save}>
                 <Text style={styles.saveText}>SAVE</Text>
             </TouchableOpacity>
         </View>

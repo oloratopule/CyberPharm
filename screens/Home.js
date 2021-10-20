@@ -28,12 +28,11 @@ const Home = ({ navigation }) => {
 
             <View>
                 <Search />
-                
             </View>
 
             <ScrollView horizontal={true} contentContainerStyle={styles.inconList}>
                 <TouchableOpacity>
-                    <VaccinateIcon text="Vaccination"/>
+                    <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Doctors')}>
                     <Book text="Book Dr." />
@@ -52,9 +51,9 @@ const Home = ({ navigation }) => {
             <TouchableOpacity>
                 <CovidPalette />
             </TouchableOpacity>
-        
-        
-            
+
+
+
 
             <View style={styles.tipsBoxContainer}>
                 <TouchableOpacity>
@@ -108,20 +107,20 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
 
-    alert:{
+    alert: {
         marginTop: -229
     },
 
-    
+
 
     icon2: {
         width: 20,
-        height:20,
+        height: 20,
         backgroundColor: '#fff',
-        marginTop:-20,
-        marginLeft:300,
-        paddingTop:50
-       
-       
+        marginTop: -20,
+        marginLeft: 300,
+        paddingTop: 50
+
+
     },
 })
