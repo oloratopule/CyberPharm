@@ -9,33 +9,26 @@ const SymptopmChecker = () => {
     const [birthYear, setBirthYear] = useState('');
     const [issues, setIssues] = useState([]);
     const [visible, setVisible] = useState(false);
-
+    const [title, setTitel] = useState('');
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
-    const containerStyle = { backgroundColor: 'white', padding: 20 };
-
-    const Pressable = (symptomId) => {
-        console.log(symptomId)
-        setSymptomId(symptomId)
-
+    const containerStyle = { backgroundColor: 'white', padding: 20, textAlign: 'center', width: '50%', alignSelf: 'center' };
+    const Pressable = (symptomId, theTitle) => {
+        console.log(symptomId, theTitle)
+        setTitel(theTitle)
+        setSymptomId(symptomId);
     }
 
-
-    async function submitForm() {
+    async function submitForm(symptomId, value, birthYear) {
         try {
-
-            console.log(birthYear);
-            console.log(symptomId)
+            // console.log(birthYear);
             const data = await fetch(`https://healthservice.priaid.ch/diagnosis?symptoms=[${symptomId}]&gender=${value}&year_of_birth=${birthYear}&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InRoYXRvNzMybWFobG9rb0BnbWFpbC5jb20iLCJyb2xlIjoiVXNlciIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjcxMjUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3ZlcnNpb24iOiIxMDkiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL2xpbWl0IjoiMTAwIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9tZW1iZXJzaGlwIjoiQmFzaWMiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL2xhbmd1YWdlIjoiZW4tZ2IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL2V4cGlyYXRpb24iOiIyMDk5LTEyLTMxIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9tZW1iZXJzaGlwc3RhcnQiOiIyMDIxLTEwLTExIiwiaXNzIjoiaHR0cHM6Ly9hdXRoc2VydmljZS5wcmlhaWQuY2giLCJhdWQiOiJodHRwczovL2hlYWx0aHNlcnZpY2UucHJpYWlkLmNoIiwiZXhwIjoxNjM0MDQxMzk1LCJuYmYiOjE2MzQwMzQxOTV9._JLOvYXlPwge-MDlLCJ9vgHGLk12G1u2H5DangKL9jo&format=json&language=en-gb`)
-                .then((res) => res.json())
-                .then((data) => data);
-            setIssues([...data.Issues, issues])
-            console.log(data);
+                .then(res => data.json())
+                .then((setIssues(data)))
+            console.log(data)
         } catch (err) {
 
         }
-
-
     }
 
     return (
@@ -48,7 +41,7 @@ const SymptopmChecker = () => {
                         <View>
                             {SymptomList.map(symptom => {
                                 return (
-                                    <TouchableOpacity onPress={() => Pressable(symptom.tagId)}>
+                                    <TouchableOpacity onPress={() => Pressable(symptom.tagId, symptom.title)}>
                                         <Text key={symptom.tagId}>{symptom.title}</Text>
                                     </TouchableOpacity>
                                 )
@@ -73,7 +66,7 @@ const SymptopmChecker = () => {
                 </RadioButton.Group>
             </View>
 
-            <TouchableOpacity style={styles.submitBtn} onPress={() => submitForm()}>
+            <TouchableOpacity style={styles.submitBtn} onPress={() => submitForm(symptomId, value, birthYear)}>
                 <Text style={styles.sumbitLabel}>SUBMIT</Text>
             </TouchableOpacity>
 
@@ -81,12 +74,10 @@ const SymptopmChecker = () => {
             <Provider>
                 <Portal>
                     <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
-                        <Text>Hello</Text>
-                        {issues.map((data) => {
-                            return (
-                                <Text>{data}</Text>
-                            )
-                        })}
+                        <Text>{title}</Text>
+                        <Text>{symptomId}</Text>
+                        <Text>{birthYear}</Text>
+                        <Text>{value}</Text>
                     </Modal>
                 </Portal>
             </Provider >
@@ -124,8 +115,7 @@ const styles = StyleSheet.create({
     }
     ,
     inputlabel: {
-        textAlign: 'left',
-        marginLeft: 80,
+        alignSelf: 'center',
         marginTop: 20
     }
     ,

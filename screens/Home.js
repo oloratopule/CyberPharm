@@ -12,7 +12,7 @@ import VaccinateIcon from "../components/VaccinateIcon";
 import Book from "../components/Book";
 import Donate from "../components/Donate";
 import TipsBox1 from "../components/TipsBox1";
-import Contacts from './Contacts'
+import Contact from './Contact'
 import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
 

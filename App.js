@@ -13,16 +13,30 @@ import SOS from './screens/SOS';
 import Doctors from './screens/Doctors';
 import Appointment from './screens/Appointment';
 import Dates from './screens/Dates';
-import Contact from './screens/Contacts';
+import Contact from './screens/Contact';
 import ContactForm from './screens/ContactForm';
 
 const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
 
   return (
-    <View>
-      < Home />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        {        
+        // <Stack.Screen name="Login" component={Login} />
+        // <Stack.Screen name="Register" component={Register} />
+        // <Stack.Screen name="ResetPassword" component={ResetPassword} />
+        // <Stack.Screen name="Home" component={Home} />
+        // <Stack.Screen name="Contact" component={Contact} />
+        // <Stack.Screen name="SOS" component={SOS} />
+        // <Stack.Screen name="Doctors" component={Doctors} />
+        // <Stack.Screen name="Appointment" component={Appointment} />
+        // <Stack.Screen name="Symptom" component={SymptopmChecker} />
+        // <Stack.Screen name="Dates" component={Dates} />
+      }
+      <Stack.Screen name="Form" component={ContactForm} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
