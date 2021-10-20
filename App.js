@@ -15,15 +15,41 @@ import Appointment from './screens/Appointment';
 import Dates from './screens/Dates';
 import Contact from './screens/Contact';
 import ContactForm from './screens/ContactForm';
+<<<<<<< HEAD
 import ContactItem from './components/ContactItem';
+=======
+import Vaccination from './screens/Vaccination';
+import DonateBlood from './screens/DonateBlood';
+>>>>>>> b8aa64ed958b85edcd369be59b356a7471afdce5
 
 const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
 
   return (
+<<<<<<< HEAD
     <View>
       <ContactForm />
     </View>
+=======
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name="Login" component={Login} />
+    //     <Stack.Screen name="Register" component={Register} />
+    //     <Stack.Screen name="ResetPassword" component={ResetPassword} />
+    //     <Stack.Screen name="Home" component={Home} />
+    //     <Stack.Screen name="Contact" component={Contact} />
+    //     <Stack.Screen name="SOS" component={SOS} />
+    //     <Stack.Screen name="Doctors" component={Doctors} />
+    //     <Stack.Screen name="Appointment" component={Appointment} />
+    //     <Stack.Screen name="Symptom" component={SymptopmChecker} />
+    //     <Stack.Screen name="Dates" component={Dates} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+<View>
+  <Vaccination/>
+  </View>
+
+>>>>>>> b8aa64ed958b85edcd369be59b356a7471afdce5
   );
 }
 

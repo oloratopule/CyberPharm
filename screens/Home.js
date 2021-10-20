@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
                 <TouchableOpacity>
                     <VaccinateIcon text="Vaccination"/>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Appointment')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Doctors')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
                 <TouchableOpacity >
