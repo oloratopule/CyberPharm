@@ -4,8 +4,13 @@ import ContactItem from '../components/ContactItem'
 import ContactList from '../API/ContactList.'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-//import an array
+
 const Contacts = ({navigation}) => { 
+
+    const [firstName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [phoneNumber, setPhoneNumber] = useState();
+    const [email, setEmail] = useState();
 
     return (
         <ScrollView horizontal={false} style={styles.container}>

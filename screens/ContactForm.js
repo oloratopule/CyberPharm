@@ -1,13 +1,23 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput } from 'react-native'
+import { collection, addDoc } from '../config/firebase'
+import savingContact from '../data/savingContact'
 
 const ContactForm = () => {
 
     const [firstName, setFirstName] = useState();
-    const [lastName, setlastName] = useState();
+    const [lastName, setLastName] = useState();
     const [phoneNumber, setPhoneNumber] = useState();
+    const [email, setEmail] = useState();
 
-    
+    const addContacts = (firstName, lastName, email, phoneNumber) => {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+        setPhoneNumber(phoneNumber);
+
+        savingContact(firstName, lastName, email, phoneNumber)
+    }
 
     return (
         <View style={styles.container}>
@@ -17,26 +27,33 @@ const ContactForm = () => {
                 <TextInput
                     placeholder="Enter name"
                     style={styles.input}
-                    onChangeText={setFirstName}
+                    onChangeText={setFirstName(firstName)}
                 />
 
                 <Text style={styles.label}>Surname</Text>
                 <TextInput
                     placeholder="Enter surname"
                     style={styles.input}
-                    onChangeText={setlastName}
+                    onChangeText={setLastName(lastName)}
+                />
+
+                <Text style={styles.label}>Email</Text>
+                <TextInput
+                    placeholder="Enter email"
+                    style={styles.input}
+                    onChangeText={setEmail(email)}
                 />
 
                 <Text style={styles.label}>Phone number</Text>
                 <TextInput
                     placeholder="+998 -- --- -- --"
                     style={styles.input}
-                    onChangeText={setPhoneNumber}
+                    onChangeText={setPhoneNumber()}
                 />
 
             </View>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={addContacts(firstName, lastName, phoneNumber)}>
                 <Text style={styles.saveText}>SAVE</Text>
             </TouchableOpacity>
         </View>
