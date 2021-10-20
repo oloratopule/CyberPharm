@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput } from 'react-native'
-import { collection, addDoc } from '../config/firebase'
 import savingContact from '../data/savingContact'
 
 const ContactForm = () => {
@@ -10,50 +9,54 @@ const ContactForm = () => {
     const [phoneNumber, setPhoneNumber] = useState();
     const [email, setEmail] = useState();
 
-    const addContacts = (firstName, lastName, email, phoneNumber) => {
-        setFirstName(firstName);
-        setLastName(lastName);
-        setEmail(email);
-        setPhoneNumber(phoneNumber);
-
-        savingContact(firstName, lastName, email, phoneNumber)
+    function save(fn, ln, pn, em) {
+        firstName = fn;
+        lastName = ln;
+        email = em;
+        phone = pn;
+        savingContact(firstName, lastName, email, phone)
     }
 
     return (
         <View style={styles.container}>
 
             <View>
-                <Text style={styles.label}>Name</Text>
-                <TextInput
-                    placeholder="Enter name"
-                    style={styles.input}
-                    onChangeText={setFirstName(firstName)}
-                />
+                <View>
+                    <View>
+                        <Text style={styles.label}>Name</Text>
+                        <TextInput
+                            placeholder="Enter name"
+                            style={styles.input}
+                   /*{ onChangeText={setFirstName(firstName)}}*/ />
+                    </View>
 
-                <Text style={styles.label}>Surname</Text>
-                <TextInput
-                    placeholder="Enter surname"
-                    style={styles.input}
-                    onChangeText={setLastName(lastName)}
-                />
+                    <View>
+                        <Text style={styles.label}>Surname</Text>
+                        <TextInput
+                            placeholder="Enter surname"
+                            style={styles.input}
+               /*     onChangeText={setLastName(lastName)} */ />
+                    </View>
 
-                <Text style={styles.label}>Email</Text>
-                <TextInput
-                    placeholder="Enter email"
-                    style={styles.input}
-                    onChangeText={setEmail(email)}
-                />
+                    <View>
+                        <Text style={styles.label}>Email</Text>
+                        <TextInput
+                            placeholder="Enter email"
+                            style={styles.input}
+               /*     onChangeText={setEmail(email)} */ />
+                    </View>
 
-                <Text style={styles.label}>Phone number</Text>
-                <TextInput
-                    placeholder="+998 -- --- -- --"
-                    style={styles.input}
-                    onChangeText={setPhoneNumber()}
-                />
-
+                    <View>
+                        <Text style={styles.label}>Phone number</Text>
+                        <TextInput
+                            placeholder="+998 -- --- -- --"
+                            style={styles.input}
+                /*    onChangeText={setPhoneNumber(phoneNumber)} */ />
+                    </View>
+                </View>
             </View>
 
-            <TouchableOpacity style={styles.button} onPress={addContacts(firstName, lastName, phoneNumber)}>
+            <TouchableOpacity style={styles.button}>
                 <Text style={styles.saveText}>SAVE</Text>
             </TouchableOpacity>
         </View>

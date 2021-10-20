@@ -1,29 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, FlatList, ActivityIndicator } from 'react-native'
 import ContactItem from '../components/ContactItem'
 import ContactList from '../API/ContactList.'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Contacts = ({navigation}) => { 
+const Contacts = ({ navigation }) => {
 
-    const [firstName, setFirstName] = useState();
-    const [lastName, setLastName] = useState();
-    const [phoneNumber, setPhoneNumber] = useState();
-    const [email, setEmail] = useState();
+    // const [firstName, setFirstName] = useState();
+    // const [lastName, setLastName] = useState();
+    // const [phoneNumber, setPhoneNumber] = useState();
+    // const [email, setEmail] = useState();
+    
+    // const [contact, setContact] = useState([
+    //     {
+    //         fname: firstName,
+    //         lname: lastName,
+    //         phone: phoneNumber,
+    //         mail: email
+    //     }
+    // ])
 
     return (
         <ScrollView horizontal={false} style={styles.container}>
             <TextInput style={styles.search} placeholder="Search..." />
 
-            {ContactList.map(user => {
+            {contact.map(user => {
                 return (
-                    <ContactItem username={user.username} number={user.number} />
+                    <ContactItem  />
                 )
             })}
 
 
-            <TouchableOpacity style={styles.addIconContainer} onPress={()=>navigation.navigate('Form')}>
+            <TouchableOpacity style={styles.addIconContainer} onPress={() => navigation.navigate('Form')}>
                 <Image style={styles.addIcon} source={require('../assets/icon/add.png')} />
             </TouchableOpacity>
         </ScrollView>
