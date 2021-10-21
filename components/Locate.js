@@ -1,20 +1,20 @@
 import React from 'react'
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 
-const Navbar = () => {
+const Locate = () => {
     return (
-        <View style={styles.NavContainer}>
+        <View style={styles.locateBar}>
             <TouchableOpacity>
-                <Image style={styles.icon} source={require('../assets/icon/locate.png')} />
+                <Image style={styles.locate} source={require('../assets/icon/locate.png')} />
             </TouchableOpacity>
         </View>
     )
 }
 
-export default Navbar
+export default Locate
 
 const styles = StyleSheet.create({
-    NavContainer: {
+    locateBar: {
         justifyContent: 'center',
         alignItems: 'center',
         width: 342,
@@ -24,14 +24,9 @@ const styles = StyleSheet.create({
         padding: 0,
     }
     ,
-    icon: {
+    locate: {
         width: 360,
         height: 80,
-        backgroundColor: '#054EDE',
-        marginLeft: 40,
-        marginRight: 20, 
-        marginTop:60,
-        borderRadius:20
-        
+        marginTop:60,        
     }
 })

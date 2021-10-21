@@ -1,16 +1,25 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './screens/Home';
+import {NavigationContainer} from '@react-navigation/native'
+import Login from './screens/Login';
+import Register from './screens/Register';
 import ResetPassword from './screens/ResetPassword';
+import Home from './screens/Home';
+import Contact from './screens/Contact';
 import SOS from './screens/SOS';
 import Doctors from './screens/Doctors';
 import Appointment from './screens/Appointment';
+import SymptopmChecker from './screens/SymptopmChecker';
 import Dates from './screens/Dates';
-import Contact from './screens/Contact';
 import ContactForm from './screens/ContactForm';
 import Vaccination from './screens/Vaccination';
 import DonateBlood from './screens/DonateBlood';
+
+
+
+
+
 
 const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
@@ -27,7 +36,9 @@ export default function App({ navigation }) {
         <Stack.Screen name="Doctors" component={Doctors} />
         <Stack.Screen name="Appointment" component={Appointment} />
         <Stack.Screen name="Symptom" component={SymptopmChecker} />
-        <Stack.Screen name="Dates" component={Dates} />
+        <Stack.Screen name="ContactForm" component={ContactForm} />
+        <Stack.Screen name="Vaccination" component={Vaccination} />
+        <Stack.Screen name="DonateBlood" component={DonateBlood} />
       </Stack.Navigator>
     </NavigationContainer>
   );

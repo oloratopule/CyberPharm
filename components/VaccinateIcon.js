@@ -15,8 +15,8 @@ export default VaccinateIcon
 const styles = StyleSheet.create({
     iconContext: {
         flexDirection: 'column',
-        textAlign:'center',
-        marginLeft:30
+        textAlign: 'center',
+        marginLeft: 0
     }
     ,
     icon: {

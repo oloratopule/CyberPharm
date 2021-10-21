@@ -12,6 +12,8 @@ export default function Doctors({ navigation }) {
       <View>
         <TextInput placeholder="Search for doctors" style={styles.textInput} />
       </View>
+      <Text>Speciality😊 </Text>
+
       <ScrollView
         horizontal={true}
         pagingEnabled={true}
@@ -19,70 +21,69 @@ export default function Doctors({ navigation }) {
         style={styles.scrollContainer}>
         <View style={styles.specialty}>
           <View style={styles.specialty1}>
-          <Image style={styles.img} source={require('../assets/icon/brain.png')} />
-            <Text
-              style={{
-                marginLeft: '25px',
-                marginTop: '5px',
-                fontSize: '15px',
-              }}>
+            <Image style={styles.img} source={require('../assets/icon/brain.png')} />
+            <Text style={styles.specialistTitle}>
               Neurology
             </Text>
             <Text
-              style={{ color: 'white', marginLeft: '15px', marginTop: '6px' }}>
+              style={styles.specialistCount}>
               2.029 Doctors
             </Text>
           </View>
           <View style={styles.specialty2}>
-          <Image style={styles.img} source={require('../assets/icon/dna.png')} />
+            <Image style={styles.img} source={require('../assets/icon/dna.png')} />
             <Text
-              style={{
-                marginLeft: '25px',
-                marginTop: '10px',
-                fontSize: '15px',
-              }}>
+              style={styles.specialistTitle}>
               Genetics
             </Text>
             <Text
-              style={{ color: 'white', marginLeft: '15px', marginTop: '6px' }}>
+              style={styles.specialistCount}>
               1.870 Doctors
             </Text>
           </View>
           <View style={styles.specialty2}>
-          <Image style={styles.img} source={require('../assets/icon/dentist.png')} />
+            <Image style={styles.img} source={require('../assets/icon/dentist.png')} />
             <Text
-              style={{
-                marginLeft: '25px',
-                marginTop: '10px',
-                fontSize: '15px',
-              }}>
+              style={styles.specialistTitle}>
               Dentistry
             </Text>
-            <Text
-              style={{ color: 'white', marginLeft: '15px', marginTop: '6px' }}>
+            <Text style={styles.specialistCount}>
               1.064 Doctors
             </Text>
           </View>
           <View style={styles.specialty2}>
-          <Image style={styles.img} source={require('../assets/icon/surgery.png')} />
-            <Text
-              style={{
-                marginLeft: '25px',
-                marginTop: '10px',
-                fontSize: '15px',
-              }}>
+            <Image style={styles.img} source={require('../assets/icon/surgery.png')} />
+            <Text style={styles.specialistTitle}>
               Surgery
             </Text>
-            <Text
-              style={{ color: 'white', marginLeft: '15px', marginTop: '6px' }}>
+            <Text style={styles.specialistCount}>
               964 Doctors
             </Text>
           </View>
-
-          
         </View>
       </ScrollView>
+
       <View style={styles.cards}>
+        <View style={styles.cardRow}>
+          <View style={styles.card1}>
+            <View>
+              <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
+            </View>
+            <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
+            <Text style={styles.occupation}>Viralogist</Text>
+            <Text></Text>
+          </View>
+          <View style={styles.card2}>
+            <View>
+              <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
+            </View>
+            <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
+            <Text style={styles.occupation}>Oncologists</Text>
+            <Text></Text>
+          </View>
+        </View>
+
+        <View style={styles.cardRow}>
         <View style={styles.card1}>
           <View>
             <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
@@ -101,69 +102,63 @@ export default function Doctors({ navigation }) {
         </View>
       </View>
 
-      <View style={styles.cards}>
-        <View style={styles.card1}>
-          <View>
-            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
-          </View>
-          <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Klimisch J</Text>
-          <Text style={styles.occupation}>Surgeon</Text>
-          <Text></Text>
+      <View style={styles.cardRow}>
+      <View style={styles.card1}>
+        <View>
+          <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
         </View>
-        <View style={styles.card2}>
-          <View>
-            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
-          </View>
-          <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Martinez K</Text>
-          <Text style={styles.occupation}>Pedratrician</Text>
-          <Text></Text>
+        <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
+        <Text style={styles.occupation}>Viralogist</Text>
+        <Text></Text>
+      </View>
+      <View style={styles.card2}>
+        <View>
+          <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
         </View>
+        <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
+        <Text style={styles.occupation}>Oncologists</Text>
+        <Text></Text>
+      </View>
+    </View>
+
       </View>
 
-      <View style={styles.cards}>
-        <View style={styles.card1}>
-          <View>
-            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
-          </View>
-          <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Mark M</Text>
-          <Text style={styles.occupation5}>Rheumatologists</Text>
-          <Text></Text>
-        </View>
-        <View style={styles.card2}>
-          <View>
-            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
-          </View>
-          <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. O'Boyle J</Text>
-          <Text style={styles.occupation}>Radiologists</Text>
-          <Text></Text>
-        </View>
-      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: 50,
-    marginRight: 20,
-    marginTop: 20,
+    // marginLeft: 50,
+    // marginRight: 20,
+    padding: 2,
+    marginTop: 0,
+    backgroundColor: '#fff'
   },
   textInput: {
     marginTop: 35,
     borderWidth: '1px',
     width: '250px',
     height: '40px',
-    paddingLeft: '40px',
+    paddingLeft: 14,
     marginBottom: '10px',
-    borderRadius: 25,
+    borderRadius: 10,
     borderColor: 'lightgray',
-    marginHorizontal: 10,
-    marginVertical: 25,
+    alignSelf: 'center'
+    // marginHorizontal: 10,
+    // marginVertical: 25,
   },
   cards: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     marginTop: 50,
-  },
+    alignItems: 'center', justifyContent: 'center'
+  }
+  ,
+  cardRow: {
+    flexDirection: 'row', 
+    marginTop:10
+  }
+  ,
   card1: {
     backgroundColor: '#054EDE',
     height: 150,
@@ -216,11 +211,19 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
 
-  img:{
-    marginTop:15,
-    marginLeft:35,
-    height:45,
-    width:45
-    
+  img: {
+    marginTop: 15,
+    marginLeft: 35,
+    height: 45,
+    width: 45
+
+  },
+  specialistTitle: {
+    textAlign: 'center',
+    marginTop: '5px',
+    fontSize: '15px',
+  },
+  specialistCount: {
+    color: 'white', textAlign: 'center'
   }
 });

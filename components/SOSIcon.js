@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 const SOSIcon = (props) => {
     return (
         <View style={styles.iconContext}>
-            <Image style={styles.icon} source={require('../assets/icon/S.O.Scontacts.png')} />
+            <Image style={styles.icon} source={require('../assets/icon/SOScontacts.png')} />
             <Text>{props.text}</Text>
         </View>
     )
