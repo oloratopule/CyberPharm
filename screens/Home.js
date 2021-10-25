@@ -22,18 +22,20 @@ const Home = ({ navigation }) => {
     return (
         <View style={styles.homeContent}>
             <View style={styles.top}>
-                <SosButton />
+                <TouchableOpacity  onPress={() => navigation.navigate('SOS')}>
+                    <SosButton />
+                </TouchableOpacity>
                 <NotificationCenter />
             </View>
 
             <View style={styles.inconList}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Vaccination')}>
                     <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Doctors')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Book')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => navigation.navigate('Donation')}>
                     <Donate text="Donate" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Contact')}>

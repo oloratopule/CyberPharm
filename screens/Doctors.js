@@ -65,62 +65,80 @@ export default function Doctors({ navigation }) {
 
       <View style={styles.cards}>
         <View style={styles.cardRow}>
-          <View style={styles.card1}>
+          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Doctors')}>
             <View>
-              <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
+              <Image style={styles.sos} />
             </View>
-            <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
+            <Text style={styles.name}>Dr. Bellamy N</Text>
             <Text style={styles.occupation}>Viralogist</Text>
             <Text></Text>
-          </View>
-          <View style={styles.card2}>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Doctors')}>
             <View>
               <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
             </View>
-            <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
+            <Text style={styles.name}>Dr. Bellamy N</Text>
             <Text style={styles.occupation}>Oncologists</Text>
             <Text></Text>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.cardRow}>
-        <View style={styles.card1}>
-          <View>
-            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
-          </View>
-          <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
-          <Text style={styles.occupation}>Viralogist</Text>
-          <Text></Text>
+          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Doctors')}>
+            <View>
+              <Image style={styles.sos} />
+            </View>
+            <Text style={styles.name}>Dr. Bellamy N</Text>
+            <Text style={styles.occupation}>Viralogist</Text>
+            <Text></Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Doctors')}>
+            <View>
+              <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
+            </View>
+            <Text style={styles.name}>Dr. Bellamy N</Text>
+            <Text style={styles.occupation}>Oncologists</Text>
+            <Text></Text>
+          </TouchableOpacity>
         </View>
-        <View style={styles.card2}>
-          <View>
-            <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
-          </View>
-          <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
-          <Text style={styles.occupation}>Oncologists</Text>
-          <Text></Text>
-        </View>
-      </View>
 
-      <View style={styles.cardRow}>
-      <View style={styles.card1}>
-        <View>
-          <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
+        <View style={styles.cardRow}>
+          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Doctors')}>
+            <View>
+              <Image style={styles.sos} />
+            </View>
+            <Text style={styles.name}>Dr. Bellamy N</Text>
+            <Text style={styles.occupation}>Viralogist</Text>
+            <Text></Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Doctors')}>
+            <View>
+              <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
+            </View>
+            <Text style={styles.name}>Dr. Bellamy N</Text>
+            <Text style={styles.occupation}>Oncologists</Text>
+            <Text></Text>
+          </TouchableOpacity>
         </View>
-        <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
-        <Text style={styles.occupation}>Viralogist</Text>
-        <Text></Text>
-      </View>
-      <View style={styles.card2}>
-        <View>
-          <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
-        </View>
-        <Text style={styles.name} onPress={() => navigation.navigate('Appointment')}>Dr. Bellamy N</Text>
-        <Text style={styles.occupation}>Oncologists</Text>
-        <Text></Text>
-      </View>
-    </View>
 
+        <View style={styles.cardRow}>
+          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Doctors')}>
+            <View>
+              <Image style={styles.sos} />
+            </View>
+            <Text style={styles.name}>Dr. Bellamy N</Text>
+            <Text style={styles.occupation}>Viralogist</Text>
+            <Text></Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Doctors')}>
+            <View>
+              <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
+            </View>
+            <Text style={styles.name}>Dr. Bellamy N</Text>
+            <Text style={styles.occupation}>Oncologists</Text>
+            <Text></Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
     </View>
@@ -155,8 +173,8 @@ const styles = StyleSheet.create({
   }
   ,
   cardRow: {
-    flexDirection: 'row', 
-    marginTop:10
+    flexDirection: 'row',
+    marginTop: 10
   }
   ,
   card1: {
