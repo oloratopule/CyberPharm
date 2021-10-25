@@ -15,7 +15,8 @@ export default SymptomsIcon
 const styles = StyleSheet.create({
     iconContext: {
         flexDirection: 'column',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginRight:0
     }
     ,
     icon: {

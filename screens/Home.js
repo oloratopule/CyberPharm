@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, View, TouchableOpacity, ScrollView, SafeAreaView, Modal } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, ScrollView } from 'react-native'
 import HomePageText from '../components/HomePageText'
 import CovidPalette from '../components/CovidPalette'
 import SOSIcon from '../components/SOSIcon'
 import SymptomsIcon from '../components/SymptomsIcon';
+import Search from '../components/Search'
 import SosButton from "../components/SosButton";
 import VaccinateIcon from "../components/VaccinateIcon";
 import Book from "../components/Book";
@@ -14,32 +15,27 @@ import TipsBox1 from "../components/TipsBox1";
 import Contact from './Contact'
 import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
-import NavBar from '../components/NavBar'
-
+import Locate from '../components/Locate';
 
 const Home = ({ navigation }) => {
 
     return (
-        <SafeAreaView style={styles.homeContent}>
+        <View style={styles.homeContent}>
             <View style={styles.top}>
-                <HomePageText style={styles.title} />
-                <SosButton />
+                <TouchableOpacity  onPress={() => navigation.navigate('SOS')}>
+                    <SosButton />
+                </TouchableOpacity>
                 <NotificationCenter />
             </View>
 
-            <ScrollView
-                horizontal={true}
-                pagingEnabled={true}
-                showsHorizontalScrollIndicator={false}
-                ContenContainerStyle={styles.scrollContainer}>
-
-                <TouchableOpacity>
+            <View style={styles.inconList}>
+                <TouchableOpacity onPress={() => navigation.navigate('Vaccination')}>
                     <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Doctors')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Book')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => navigation.navigate('Donation')}>
                     <Donate text="Donate" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
@@ -48,24 +44,16 @@ const Home = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Symptom')}>
                     <SymptomsIcon text="Symptom" />
                 </TouchableOpacity>
-            </ScrollView>
-
-
-
-            <TouchableOpacity>
-                <CovidPalette />
-            </TouchableOpacity>
-
-
-
-
-            <View>
-                <NavBar />
             </View>
 
+            <View>
+                <CovidPalette />
+            </View>
 
-
-        </SafeAreaView>
+            <View>
+                <Locate />
+            </View>
+        </View>
     )
 }
 
@@ -74,7 +62,9 @@ export default Home
 const styles = StyleSheet.create({
     homeContent: {
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: 0,
+        margin: 0
     }
     ,
     top: {
@@ -85,41 +75,16 @@ const styles = StyleSheet.create({
         marginRight: 20
     }
     ,
-    tipsBoxContainer: {
-        flexDirection: 'row'
-    }
-    ,
-    scrollContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    nav: {
-        backgroundColor: '#054EDE',
-        margin: 0,
-        borderRadius: 20,
-        marginTop: 30,
 
-    }
-    ,
-    navItem: {
-        alignSelf: 'center'
+
+    inconList: {
+        flexDirection: 'row',
+        padding: 0,
+        margin: 0
     },
 
     alert: {
         marginTop: -229
     },
 
-
-
-    icon2: {
-        width: 20,
-        height: 20,
-        backgroundColor: '#fff',
-        marginTop: -20,
-        marginLeft: 300,
-        paddingTop: 50
-
-
-    },
 })

@@ -9,7 +9,11 @@ export default function SOS({navigation}) {
       <Foundation name="graph-horizontal" size={40} color="black" />
    </View>
    <TouchableOpacity>
+<<<<<<< HEAD
    <ImageBackground style={styles.sos} source={require('../assets/icon/SosIcon.png')}/>
+=======
+   <ImageBackground style={styles.sos} source={require('../assets/icon/panic.png')}/>
+>>>>>>> 9556bf3e8b1d1aa03392a76669e5e56c34f875f6
    </TouchableOpacity>
    <Ionicons name="add-circle" size={40} color='#00B2FF' style={styles.add}/>
 
