@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet,View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'
 import Login from './screens/Login';
@@ -16,7 +16,7 @@ import ContactForm from './screens/ContactForm';
 import Vaccination from './screens/Vaccination';
 import DonateBlood from './screens/DonateBlood';
 import NewDoctors from './screens/NewDoctors';
-
+import Messaging from './screens/Messaging';
 
 
 
@@ -25,8 +25,11 @@ const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
 
   return (
+
     <NavigationContainer>
       <Stack.Navigator>
+
+        <Stack.Screen name="Messaging" component={Messaging} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Doctors" component={NewDoctors} />
         <Stack.Screen name="Book" component={Doctors} />

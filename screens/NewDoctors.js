@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, Dimensions, ScrollView, TouchableOpacity
 import { Card, Paragraph, Title } from 'react-native-paper'
 const { width, height } = Dimensions.get('screen')
 
-const NewDoctors = ({navigation}) => {
+const NewDoctors = ({ navigation }) => {
     return (
         <ScrollView horizontal={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} contentContainerStyle={styles.profileBody}>
             <Card style={styles.card}>
@@ -49,29 +49,42 @@ const NewDoctors = ({navigation}) => {
 
                 <Title>Communication</Title>
                 <View>
-                    <View style={styles.contactListTypes}>
-                        <Image style={styles.icon} source={require('../assets/icon/text.png')} />
-                        <View>
-                            <Title>Messaging</Title>
-                            <Paragraph>Chat me up, share photos.</Paragraph>
-                        </View>
-                    </View>
 
-                    <View style={styles.contactListTypes}>
-                        <Image style={styles.icon} source={require('../assets/icon/call.png')} />
-                        <View>
-                            <Title>Audio Call</Title>
-                            <Paragraph>Call your doctor directly.</Paragraph>
-                        </View>
-                    </View>
 
-                    <View style={styles.contactListTypes}>
-                        <Image style={styles.icon} source={require('../assets/icon/video.png')} />
-                        <View>
-                            <Title>Video Call</Title>
-                            <Paragraph>See your doctor live.</Paragraph>
+
+
+
+                    <TouchableOpacity onPress={() => navigation.navigate('SOS')}>
+                        <View style={styles.contactListTypes}>
+                            <Image style={styles.icon} source={require('../assets/icon/text.png')} />
+                            <View>
+                                <Title>Messaging</Title>
+                                <Paragraph>Chat me up, share photos.</Paragraph>
+                            </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+
+                        <View style={styles.contactListTypes}>
+                            <Image style={styles.icon} source={require('../assets/icon/call.png')} />
+                            <View>
+                                <Title>Audio Call</Title>
+                                <Paragraph>Call your doctor directly.</Paragraph>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={styles.contactListTypes}>
+                            <Image style={styles.icon} source={require('../assets/icon/video.png')} />
+                            <View>
+                                <Title>Video Call</Title>
+                                <Paragraph>See your doctor live.</Paragraph>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+
                     <TouchableOpacity style={styles.bookButton} onPress={() => navigation.navigate('Booking')}>
                         <Text style={styles.bookButtontext}>Book Appointment</Text>
                     </TouchableOpacity>

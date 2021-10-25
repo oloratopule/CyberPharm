@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import {  View, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { Foundation, Ionicons } from '@expo/vector-icons';
 
 export default function SOS({navigation}) {
