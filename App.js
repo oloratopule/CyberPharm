@@ -37,7 +37,7 @@ export default function App({ navigation }) {
     //   </Stack.Navigator>
     // </NavigationContainer>
 <View>
-  <Vaccination/>
+  <Dates/>
   </View>
 
   );
