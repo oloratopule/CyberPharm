@@ -15,30 +15,27 @@ import TipsBox1 from "../components/TipsBox1";
 import Contact from './Contact'
 import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
+import Locate from '../components/Locate';
 
 const Home = ({ navigation }) => {
 
     return (
         <View style={styles.homeContent}>
             <View style={styles.top}>
-                <HomePageText style={styles.title} />
-                <SosButton />
+                <TouchableOpacity  onPress={() => navigation.navigate('SOS')}>
+                    <SosButton />
+                </TouchableOpacity>
                 <NotificationCenter />
             </View>
 
-            <View>
-                <Search />
-                
-            </View>
-
-            <ScrollView horizontal={true} contentContainerStyle={styles.inconList}>
-                <TouchableOpacity  onPress={() => navigation.navigate('Vaccination')}>
-                    <VaccinateIcon text="Vaccination"/>
+            <View style={styles.inconList}>
+                <TouchableOpacity onPress={() => navigation.navigate('Vaccination')}>
+                    <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Doctors')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Book')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
-                <TouchableOpacity  onPress={() => navigation.navigate('DonateBlood')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Donation')}>
                     <Donate text="Donate" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
@@ -47,26 +44,15 @@ const Home = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Symptom')}>
                     <SymptomsIcon text="Symptom" />
                 </TouchableOpacity>
-            </ScrollView>
-
-            <TouchableOpacity  onPress={() => navigation.navigate('Covid')}>
-                <CovidPalette />
-            </TouchableOpacity>
-        
-        
-            
-
-            <View style={styles.tipsBoxContainer}>
-                <TouchableOpacity>
-                    <TipsBox1 />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <TipsBox1 />
-                </TouchableOpacity>
             </View>
 
+            <View>
+                <CovidPalette />
+            </View>
 
-
+            <View>
+                <Locate />
+            </View>
         </View>
     )
 }
@@ -76,7 +62,9 @@ export default Home
 const styles = StyleSheet.create({
     homeContent: {
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: 0,
+        margin: 0
     }
     ,
     top: {
@@ -87,41 +75,16 @@ const styles = StyleSheet.create({
         marginRight: 20
     }
     ,
-    tipsBoxContainer: {
-        flexDirection: 'row'
-    }
-    ,
+
+
     inconList: {
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    nav: {
-        backgroundColor: '#054EDE',
-        margin: 0,
-        borderRadius: 20,
-        marginTop: 30,
-
-    }
-    ,
-    navItem: {
-        alignSelf: 'center'
+        padding: 0,
+        margin: 0
     },
 
-    alert:{
+    alert: {
         marginTop: -229
     },
 
-    
-
-    icon2: {
-        width: 20,
-        height:20,
-        backgroundColor: '#fff',
-        marginTop:-20,
-        marginLeft:300,
-        paddingTop:50
-       
-       
-    },
 })

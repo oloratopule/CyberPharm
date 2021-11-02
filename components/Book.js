@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 const Book = (props) => {
     return (
         <View style={styles.iconContext}>
-            <Image style={styles.icon} source={require('../assets/icon/book.png')} />
+            <Image style={styles.icon} source={require('../assets/icon/bookDr.png')} />
             <Text>{props.text}</Text>
         </View>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { Title, Paragraph } from 'react-native-paper'
 const Notification = (props) => {
     return (

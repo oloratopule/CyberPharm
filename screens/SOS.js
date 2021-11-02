@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import {  View, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { Foundation, Ionicons } from '@expo/vector-icons';
 
 export default function SOS({navigation}) {
@@ -9,7 +9,7 @@ export default function SOS({navigation}) {
       <Foundation name="graph-horizontal" size={40} color="black" />
    </View>
    <TouchableOpacity>
-   <ImageBackground style={styles.sos} source={require('../assets/icon/SOS.png')}/>
+   <ImageBackground style={styles.sos} source={require('../assets/icon/panic.png')}/>
    </TouchableOpacity>
    <Ionicons name="add-circle" size={40} color='#00B2FF' style={styles.add}/>
 
