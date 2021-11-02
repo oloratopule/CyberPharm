@@ -32,13 +32,13 @@ const Home = ({ navigation }) => {
             </View>
 
             <ScrollView horizontal={true} contentContainerStyle={styles.inconList}>
-                <TouchableOpacity>
+                <TouchableOpacity  onPress={() => navigation.navigate('Vaccination')}>
                     <VaccinateIcon text="Vaccination"/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Doctors')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
-                <TouchableOpacity >
+                <TouchableOpacity  onPress={() => navigation.navigate('DonateBlood')}>
                     <Donate text="Donate" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
@@ -49,7 +49,7 @@ const Home = ({ navigation }) => {
                 </TouchableOpacity>
             </ScrollView>
 
-            <TouchableOpacity>
+            <TouchableOpacity  onPress={() => navigation.navigate('Covid')}>
                 <CovidPalette />
             </TouchableOpacity>
         
