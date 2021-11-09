@@ -22,7 +22,7 @@ const Home = ({ navigation }) => {
     return (
         <View style={styles.homeContent}>
             <View style={styles.top}>
-                <TouchableOpacity  onPress={() => navigation.navigate('SOS')}>
+                <TouchableOpacity  onPress={() => navigation.navigate('Panic')}>
                     <SosButton />
                 </TouchableOpacity>
                 <NotificationCenter />
@@ -38,7 +38,7 @@ const Home = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Donation')}>
                     <Donate text="Donate" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Contacts')}>
                     <SOSIcon text="Contacts" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Symptom')}>

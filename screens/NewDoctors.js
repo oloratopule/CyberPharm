@@ -4,6 +4,8 @@ import { Card, Paragraph, Title } from 'react-native-paper'
 const { width, height } = Dimensions.get('screen')
 
 const NewDoctors = ({ navigation }) => {
+
+
     return (
         <ScrollView horizontal={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} contentContainerStyle={styles.profileBody}>
             <Card style={styles.card}>

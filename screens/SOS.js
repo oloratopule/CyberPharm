@@ -1,18 +1,21 @@
 import * as React from 'react';
-import {  View, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
-import { Foundation, Ionicons } from '@expo/vector-icons';
+import { View, StyleSheet, TouchableOpacity, Image, TouchableOpacityBase } from 'react-native';
+import { Foundation, Ionicons, } from '@expo/vector-icons';
 
-export default function SOS({navigation}) {
+export default function SOS({ navigation }) {
   return (
     <View style={styles.container}>
-   <View style={styles.icons}>
-      <Foundation name="graph-horizontal" size={40} color="black" />
-   </View>
-   <TouchableOpacity>
-   <ImageBackground style={styles.sos} source={require('../assets/icon/panic.png')}/>
-   </TouchableOpacity>
-   <Ionicons name="add-circle" size={40} color='#00B2FF' style={styles.add}/>
-
+      {
+        // <View style={styles.icons}>
+        //   <Foundation name="align-left" size={40} color="black" />
+        // </View>
+      }
+      <TouchableOpacity>
+        <Image style={styles.sos} source={require('../assets/icon/panic.png')} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Contacts')}>
+        <Ionicons name="add-circle" size={70} color='#00B2FF' style={styles.add} />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -23,20 +26,19 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginTop: 20,
   },
-  icons:{
-      flexDirection: 'row',
+  icons: {
+    flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  sos:{
-      position:'absolute',
-      width:200,
-      height:200,
-      borderRadius:50,
-      marginTop: 150,
-      marginLeft:50
+  sos: {
+    width: 200,
+    height: 200,
+    borderRadius: 50,
+    marginTop: 150,
+    alignSelf:'center'
   },
-  add:{
-    marginTop:630,
-    marginLeft:290
+  add: {
+    marginTop: 260,
+    marginLeft: 290
   }
 });

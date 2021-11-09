@@ -3,11 +3,8 @@ import { firebase } from '../config/firebase';
 
 const resetPassword = (email) => {
     firebase.auth().sendPasswordResetEmail(email).then(() => {
-        alert("scscsss")
-
+        alert("EMAIL SENT!")
     }).cath((err) => {
-
-
     })
 
 }

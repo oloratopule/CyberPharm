@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, ImageBackground, TouchableOpacity } 
 import login from '../auth/login';
 
 const image = { uri: "../assets/bgOne.png" };
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -27,17 +27,17 @@ const Login = ({navigation}) => {
                     placeholder="Password"
                     onChangeText={setPassword}
                     secureTextEntry={true}
-                    />
+                />
 
-                <TouchableOpacity style={styles.button} onPress={()=>logi(navigation)}>
+                <TouchableOpacity style={styles.button} onPress={() => logi(navigation)}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
                 <View style={styles.registerText}>
-                    <Text>Don't have an account?<TouchableOpacity style={{ color: '#fff' }} onPress ={() => navigation.navigate('Register')}> Register Here</TouchableOpacity></Text>
+                    <Text>Don't have an account?<TouchableOpacity style={{ color: '#fff' }} onPress={() => navigation.navigate('Register')}> Register Here</TouchableOpacity></Text>
                 </View>
 
                 <View>
-                    <TouchableOpacity style={styles.password} onPress ={() => navigation.navigate('ResetPassword')}>
+                    <TouchableOpacity style={styles.password} onPress={() => navigation.navigate('ResetPassword')}>
                         <Text  >Forgot Password!</Text>
                     </TouchableOpacity>
                 </View>

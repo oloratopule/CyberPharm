@@ -12,6 +12,7 @@ const login = (email, password, navigation) => {
         console.log(err)
 
     })
+    
 
 }
 

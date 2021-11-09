@@ -1,27 +1,27 @@
-  
 import { NavigationContainer } from '@react-navigation/native'
-import {firebase} from '../config/firebase'
+import { firebase } from '../config/firebase'
 
-const signUp =((email,password, Confirmpassword,Navigation)=>{
-    if(Confirmpassword !== password){
+const signUp = ((email, password, Confirmpassword, Navigation) => {
+    if (Confirmpassword !== password) {
         alert("password doen't match")
-    }else {
+    } else {
         firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-           
-            firebase.firestore().collection('User').doc(email).set({
-               
-                email:email,
-                password:password})
-            alert("Account succesfully created ")
-          var user = userCredential.user;
-          Navigation.navigate("Login")
-        
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-      
+            .then((userCredential) => {
+
+                firebase.firestore().collection('User').doc(email).set({
+
+                    email: email,
+                    password: password
+                })
+                alert("Account succesfully created ")
+                var user = userCredential.user;
+                Navigation.navigate("Login")
+
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+
     };
 })
 export default signUp;

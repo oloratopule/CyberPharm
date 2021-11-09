@@ -5,11 +5,7 @@ export default class SosButton extends Component {
     render() {
         return (
             <View>
-                <TouchableOpacity>
-                    <Image style={styles.sosIcon} source={require('../assets/icon/SosIcon.png')} />
-                </TouchableOpacity>
-
-
+                <Image style={styles.sosIcon} source={require('../assets/icon/SosIcon.png')} />
             </View>
         )
     }
