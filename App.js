@@ -20,7 +20,6 @@ import Messaging from './screens/Messaging';
 
 
 
-
 const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
 
@@ -29,7 +28,7 @@ export default function App({ navigation }) {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="ResetPassword" component={ResetPassword}/>
+        <Stack.Screen name="ResetPassword" component={ResetPassword} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Contacts" component={Contact} />
         <Stack.Screen name="Panic" component={SOS} />
@@ -41,6 +40,7 @@ export default function App({ navigation }) {
         <Stack.Screen name="Vaccination" component={Vaccination} />
         <Stack.Screen name="DonateBlood" component={DonateBlood} />
         <Stack.Screen name="Dates" component={Dates} />
+        <Stack.Screen name="Book" component={NewDoctors} />
       </Stack.Navigator>
     </NavigationContainer>
   );
