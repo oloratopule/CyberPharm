@@ -56,7 +56,7 @@ const NewDoctors = ({ navigation }) => {
 
 
 
-                    <TouchableOpacity onPress={() => navigation.navigate('SOS')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Messaging')}>
                         <View style={styles.contactListTypes}>
                             <Image style={styles.icon} source={require('../assets/icon/text.png')} />
                             <View>
