@@ -33,20 +33,19 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginTop: 20,
   },
-  icons:{
-      flexDirection: 'row',
+  icons: {
+    flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  sos:{
-      position:'absolute',
-      width:200,
-      height:200,
-      borderRadius:50,
-      marginTop: 150,
-      marginLeft:50
+  sos: {
+    width: 200,
+    height: 200,
+    borderRadius: 50,
+    marginTop: 150,
+    alignSelf:'center'
   },
-  add:{
-    marginTop:630,
-    marginLeft:290
+  add: {
+    marginTop: 260,
+    marginLeft: 290
   }
 });

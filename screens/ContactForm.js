@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput } from 'react-native'
 import savingContact from '../data/savingContact'
-
+import { db, firebase } from '../config/firebase'
+import getUSER from '../auth/user'
 const ContactForm = () => {
 
     const [firstName, setFirstName] = useState();
@@ -10,9 +11,22 @@ const ContactForm = () => {
     const [email, setEmail] = useState();
 
     function save() {
-      
-       
-        savingContact("1", "2" , "3", "4");
+        const ud = getUSER();
+        console.log(ud)
+
+        db.collection('Contacts').doc(ud).collection('Contact_List').add(
+            {
+                Email: email,
+                FirstName: firstName,
+                LastName: lastName,
+                PhoneNumber: phoneNumber
+            }
+        ).then(() => {
+
+            alert('Constact has been successfully added')
+        }).catch((error) => {
+            console.error('Error adding document', error)
+        })
     }
 
     return (
@@ -50,6 +64,7 @@ const ContactForm = () => {
                         <TextInput
                             placeholder="+998 -- --- -- --"
                             style={styles.input}
+                            keyboardType='name-phone-pad'
                             onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)} />
                     </View>
                 </View>

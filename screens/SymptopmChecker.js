@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
-import { Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View, Dimensions } from 'react-native'
 import SymptomList from '../API/SymptomList'
 import { List, RadioButton, Modal, Portal, Provider, Button, Title } from 'react-native-paper'
-
+const request = require('request')
+const { width, height } = Dimensions.get('screen')
 const SymptopmChecker = () => {
     const [value, setValue] = useState('male');
     const [symptomId, setSymptomId] = useState('');
     const [birthYear, setBirthYear] = useState('');
     const [issues, setIssues] = useState([]);
+
     const [visible, setVisible] = useState(false);
     const [title, setTitel] = useState('');
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
-    const containerStyle = { backgroundColor: 'white', padding: 20, textAlign: 'center', width: '50%', alignSelf: 'center' };
+    const containerStyle = { backgroundColor: 'white', padding: 20, width: width - 30, alignSelf: 'center' };
     const Pressable = (symptomId, theTitle) => {
         console.log(symptomId, theTitle)
         setTitel(theTitle)
@@ -20,15 +22,23 @@ const SymptopmChecker = () => {
     }
 
     async function submitForm(symptomId, value, birthYear) {
-        try {
-            // console.log(birthYear);
-            const data = await fetch(`https://healthservice.priaid.ch/diagnosis?symptoms=[${symptomId}]&gender=${value}&year_of_birth=${birthYear}&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InRoYXRvNzMybWFobG9rb0BnbWFpbC5jb20iLCJyb2xlIjoiVXNlciIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjcxMjUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3ZlcnNpb24iOiIxMDkiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL2xpbWl0IjoiMTAwIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9tZW1iZXJzaGlwIjoiQmFzaWMiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL2xhbmd1YWdlIjoiZW4tZ2IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL2V4cGlyYXRpb24iOiIyMDk5LTEyLTMxIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9tZW1iZXJzaGlwc3RhcnQiOiIyMDIxLTEwLTExIiwiaXNzIjoiaHR0cHM6Ly9hdXRoc2VydmljZS5wcmlhaWQuY2giLCJhdWQiOiJodHRwczovL2hlYWx0aHNlcnZpY2UucHJpYWlkLmNoIiwiZXhwIjoxNjM0MDQxMzk1LCJuYmYiOjE2MzQwMzQxOTV9._JLOvYXlPwge-MDlLCJ9vgHGLk12G1u2H5DangKL9jo&format=json&language=en-gb`)
-                .then(res => data.json())
-                .then((setIssues(data)))
-            console.log(data)
-        } catch (err) {
+        const options = {
+            method: 'GET',
+            url: 'https://priaid-symptom-checker-v1.p.rapidapi.com/diagnosis',
+            qs: { gender: value, year_of_birth: birthYear, symptoms: `[${symptomId}]`, language: 'en-gb' },
+            headers: {
+                'x-rapidapi-host': 'priaid-symptom-checker-v1.p.rapidapi.com',
+                'x-rapidapi-key': 'a03eea83aemshf6f0ec9c239e73fp1980cdjsn3fcb68379662',
+                useQueryString: true
+            }
+        };
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+            setIssues([...body, body]);
+            console.log(issues)
+        });
 
-        }
+
     }
 
     return (
@@ -78,6 +88,15 @@ const SymptopmChecker = () => {
                         <Text>{symptomId}</Text>
                         <Text>{birthYear}</Text>
                         <Text>{value}</Text>
+                        <View style={styles.mapText}>
+                            {issues.map((s) => {
+                                return (
+                                    <View>
+                                        <Text style={styles.textMap}>{s}</Text>
+                                    </View>
+                                )
+                            })}
+                        </View>
                     </Modal>
                 </Portal>
             </Provider >
@@ -138,5 +157,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#3E64FF',
         borderRadius: 10
+    }
+    ,
+    mapText: {
+        textAlign: 'center',
+        alignSelf: 'center',
+
+    },
+    textMap: {
+       
     }
 })

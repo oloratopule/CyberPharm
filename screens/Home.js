@@ -33,7 +33,11 @@ const SOS = (()=>{
     return (
         <View style={styles.homeContent}>
             <View style={styles.top}>
+<<<<<<< HEAD
                 <TouchableOpacity  onPress={SOS}>
+=======
+                <TouchableOpacity  onPress={() => navigation.navigate('Panic')}>
+>>>>>>> 99b43d2e68affd267199d76b679362fdc5f4676e
                     <SosButton />
                 </TouchableOpacity>
                 <NotificationCenter />
@@ -49,7 +53,7 @@ const SOS = (()=>{
                 <TouchableOpacity onPress={() => navigation.navigate('Donation')}>
                     <Donate text="Donate" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Contacts')}>
                     <SOSIcon text="Contacts" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Symptom')}>

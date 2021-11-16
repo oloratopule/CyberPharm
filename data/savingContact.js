@@ -1,20 +1,22 @@
-import { NavigationContainer } from '@react-navigation/native';
+import {Component, React, useState} from 'react'
 import { firebase } from '../config/firebase';
-import getUser from '../auth/getUser';
-
 const savingContact = (fname, lname, email, phone) => {
- 
- firebase.firestore().collection('v').add({
-     fname,
-     lname,
-     email,
-     phone
- }).then(()=>{
-     console.log("s")
- }).catch((err)=>{
-     console.log("d")
- })
-    
+    firebase.firestore().collection("Contact").add(
+        {
+            fname,
+            lname,
+            email,
+            phone
+        }
+
+    ).then(() => {
+        console.log("correct")
+    }).catch(() => {
+        console.log("wrong")
+    })
+
+
+
 }
 
 export default savingContact;

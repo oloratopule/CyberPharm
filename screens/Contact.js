@@ -1,45 +1,66 @@
+
+
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, FlatList, ActivityIndicator } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, FlatList, ActivityIndicator, Button } from 'react-native'
 import ContactItem from '../components/ContactItem'
 import ContactList from '../API/ContactList.'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { firebase } from '../config/firebase'
+import { db } from '../config/firebase';
+import getUSER from '../auth/user'
 
-const Contacts = ({ navigation }) => {
+const Contact = ({ navigation }) => {
 
-    const [firstName, setFirstName] = useState();
-    const [lastName, setLastName] = useState();
-    const [phoneNumber, setPhoneNumber] = useState();
-    const [email, setEmail] = useState();
-    
+
     const [contact, setContact] = useState([
-        {
-            fname: firstName,
-            lname: lastName,
-            phone: phoneNumber,
-            mail: email
-        }
+        { Email: '' },
+        { FirstName: '' },
+        { PhoneNumber: '' }
     ])
+
+    const [details, setDetails] = useState([]);
+
+    const test = (() => {
+        const ud = getUSER();
+        db.collection('Contacts').doc(ud).collection('Contact_List').get().then((querySnapShot) => {
+            querySnapShot.forEach((doc) => {
+                setDetails(doc.data())
+            })
+        })
+        console.log(details)
+    })
+
+    useEffect(() => {
+        test();
+
+    }, [])
+
 
     return (
         <ScrollView horizontal={false} style={styles.container}>
             <TextInput style={styles.search} placeholder="Search..." />
 
-            {contact.map(user => {
-                return (
-                    <ContactItem  number="0718752396" username="Mahloko"/>
-                )
-            })}
 
+            {
+                //  <Button title="test" onPress={test} />
 
-            <TouchableOpacity style={styles.addIconContainer} onPress={() => navigation.navigate('Contacts')}>
+                // <Text>{details.Email}</Text>
+                // <Text>{details.FirstName}</Text>
+            }
+
+            {contact.map((data, k) => (
+                <ContactItem username={details.FirstName} number={details.PhoneNumber} />
+            ))}
+
+            <TouchableOpacity style={styles.addIconContainer} onPress={() => navigation.navigate('ContactForm')}>
                 <Image style={styles.addIcon} source={require('../assets/icon/add.png')} />
             </TouchableOpacity>
         </ScrollView>
     )
 }
 
-export default Contacts
+export default Contact
 
 const styles = StyleSheet.create({
     container: {

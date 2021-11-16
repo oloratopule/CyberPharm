@@ -6,12 +6,10 @@ export default function ResetPassword() {
     const [email, setEmail] = useState('')
 
     const resetEmail = () => {
-        SendPasswordResetMail()
+        SendPasswordResetMail(email)
     }
 
-    const reset = (email) => {
-        resetPassword(email)
-    }
+  
     return (
         <View style={styles.container}>
             <Text style={styles.head}>Reset Password</Text>

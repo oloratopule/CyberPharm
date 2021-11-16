@@ -1,40 +1,51 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View, Text, TextInput, Dimensions, TouchableOpacity } from 'react-native'
 import { Paragraph, Title } from 'react-native-paper';
-import emailjs from 'emailjs-com'
 const { width, height } = Dimensions.get('screen')
-import chat from '../chat/chat'
-
+const client = require('twilio')('AC06df3ab4309a87e11d9819c84a3f5891', 'a5555254b0123c63225ba2b7dcb64651');
+import { Twilio, } from 'twilio'
+import sgmail from '@sendgrid/mail'
+import SENDGRID_API_KEY from '../sendgrid.env'
 export default function Messaging() {
-    const form = useRef();
-    const service = "service_9dj1o2x";
-    const template = "template_mz4hjkn";
-    const uid = "user_FBWeDGGAg4iQ3mRXAhcdj";
-    
-    const Chat = (e) => {
-        e.preventDefault();
-        emailjs.sendForm(service, template, form.target, uid)
-            .then((result) => {
-                console.log(result.text);
-                alert('Message Sent!')
-            }, (error) => {
-                alert('Error')
-                console.log(error.text);
-            });
+    const [phone, setPhone] = useState('');
+    const [subject, setSubject] = useState('');
+    const [name, setName] = useState('');
+    const sgMail = require('@sendgrid/mail')
 
-        e.target.reset()
+    const Chat = () => {
+
+        sgmail.setApiKey('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')
+        const msg = {
+            to: 'thato732mahloko@gmail.com', // Change to your recipient
+            from: 'cyberpharmmlab@gmail.com', // Change to your verified sender
+            subject: subject,
+            text: 'Sent from APP "Cyber Pharm"',
+            html: '<strong>Auto messsaging API</strong>',
+        }
+        sgMail.send(msg)
+            .then(() => {
+                console.log('Email Sent')
+                alert('Email Sent')
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+
+
     }
+
+
     return (
         <View style={styles.messageFormBody}>
             <Title style={styles.titleName}>Full Name</Title>
-            <TextInput style={styles.input} textContentType="givenName" placeholder={"Enter your full name"} name="user_name" />
-            <Title style={styles.title}>Email Address</Title>
-            <TextInput style={styles.input} textContentType="emailAddress" placeholder={"Enter your email address"} name="user_email" />
+            <TextInput style={styles.input} textContentType="givenName" placeholder={"Enter your full name"} onChangeText={(name) => setName(name)} />
+            <Title style={styles.title}>Mobile Number</Title>
+            <TextInput style={styles.input} textContentType="telephoneNumber" placeholder={"Enter your mobile number"} onChangeText={(phone) => setPhone(phone)} />
             <Paragraph style={styles.titleSub}>Write your problem</Paragraph>
-            <TextInput style={styles.typingMessage} multiline={true} placeholder={"Write your message"} name="message" />
+            <TextInput style={styles.typingMessage} multiline={true} placeholder={"Write your message"} onChangeText={(subject) => setSubject(subject)} />
             <TouchableOpacity style={styles.button} onPress={Chat}>
                 <Text style={styles.buttonText}>SEND MESSAGE</Text>
-            </TouchableOpacity>            
+            </TouchableOpacity>
         </View>
     );
 }

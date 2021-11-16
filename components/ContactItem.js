@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { db } from '../config/firebase';
+import getUSER from '../auth/user';
 
 const ContactItem = (props) => {
+    const [details, setDetails] = useState([]);
+
+  
+
     return (
         <View style={styles.contactContainer}>
             <Image style={styles.avatarIcon} source={require('../assets/icon/avatar.png')} />
