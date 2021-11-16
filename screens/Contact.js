@@ -11,46 +11,47 @@ import { db } from '../config/firebase';
 import getUSER from '../auth/user'
 
 const Contact = ({ navigation }) => {
-
+    const [user, setUser] = useState([
+        { FirstName: '' },
+    ])
 
     const [contact, setContact] = useState([
-        { Email: '' },
-        { FirstName: '' },
-        { PhoneNumber: '' }
+        {},
     ])
 
     const [details, setDetails] = useState([]);
 
-    const test = (() => {
-        const ud = getUSER();
-        db.collection('Contacts').doc(ud).collection('Contact_List').get().then((querySnapShot) => {
-            querySnapShot.forEach((doc) => {
-                setDetails(doc.data())
-            })
-        })
-        console.log(details)
-    })
+
+
+
 
     useEffect(() => {
-        test();
+        const ud = getUSER();
+        console.log(ud)
+        firebase
+            .firestore()
+            .collection('Contacts')
+            .doc(ud)
+            .collection('Contact_List')
+            .onSnapshot((snapshot) => {
+                const dis = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                setContact(dis);
+            });
+    }, []);
 
-    }, [])
 
 
     return (
         <ScrollView horizontal={false} style={styles.container}>
             <TextInput style={styles.search} placeholder="Search..." />
 
-
-            {
-                //  <Button title="test" onPress={test} />
-
-                // <Text>{details.Email}</Text>
-                // <Text>{details.FirstName}</Text>
-            }
-
             {contact.map((data, k) => (
-                <ContactItem username={details.FirstName} number={details.PhoneNumber} />
+                <View>
+                    <ContactItem  data={data}/>
+                </View>
             ))}
 
             <TouchableOpacity style={styles.addIconContainer} onPress={() => navigation.navigate('ContactForm')}>

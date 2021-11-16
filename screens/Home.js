@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Book')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Donation')}>
+                <TouchableOpacity onPress={() => navigation.navigate('DonateBlood')}>
                     <Donate text="Donate" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Contacts')}>

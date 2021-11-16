@@ -88,11 +88,11 @@ const SymptopmChecker = () => {
                         <Text>{symptomId}</Text>
                         <Text>{birthYear}</Text>
                         <Text>{value}</Text>
-                        <View style={styles.mapText}>
+                        <View>
                             {issues.map((s) => {
                                 return (
-                                    <View>
-                                        <Text style={styles.textMap}>{s}</Text>
+                                    <View style={styles.textMap}>
+                                        <Text>{s}</Text>
                                     </View>
                                 )
                             })}
@@ -159,12 +159,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     }
     ,
-    mapText: {
-        textAlign: 'center',
-        alignSelf: 'center',
-
-    },
     textMap: {
-       
+        flexDirection: 'row'
     }
 })

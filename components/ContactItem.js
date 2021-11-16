@@ -12,8 +12,8 @@ const ContactItem = (props) => {
         <View style={styles.contactContainer}>
             <Image style={styles.avatarIcon} source={require('../assets/icon/avatar.png')} />
             <View>
-                <Text>{props.username}</Text>
-                <Text>{props.number}</Text>
+                <Text>{props.data.FirstName}</Text>
+                <Text>{props.data.PhoneNumber}</Text>                
             </View>
             <View style={styles.iconGroup}>
                 <TouchableOpacity style={styles.delete}>
