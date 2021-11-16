@@ -17,12 +17,27 @@ import NotificationCenter from '../components/NotificationCenter'
 import SymptopmChecker from './SymptopmChecker'
 import Locate from '../components/Locate';
 
+import * as SMS from 'expo-sms';
 const Home = ({ navigation }) => {
+
+const SOS = (()=>{
+    SMS.sendSMSAsync(
+        ['0123456789', '9876543210'],
+        'My sample HelloWorld message',
+        {
+          
+        }
+      );
+})
 
     return (
         <View style={styles.homeContent}>
             <View style={styles.top}>
+<<<<<<< HEAD
+                <TouchableOpacity  onPress={SOS}>
+=======
                 <TouchableOpacity  onPress={() => navigation.navigate('Panic')}>
+>>>>>>> 99b43d2e68affd267199d76b679362fdc5f4676e
                     <SosButton />
                 </TouchableOpacity>
                 <NotificationCenter />
@@ -46,8 +61,10 @@ const Home = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
 
-            <View>
+            <View >
+                <TouchableOpacity onPress={() => navigation.navigate('Symptom')}>
                 <CovidPalette />
+                </TouchableOpacity>
             </View>
 
             <View>

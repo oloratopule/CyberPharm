@@ -5,7 +5,7 @@ import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 const url = 'https://sacoronavirus.co.za/evds/';
 
-export default function Vaccination() {
+export default function Vaccination({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Why is vaccination important?</Text>

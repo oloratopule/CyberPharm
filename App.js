@@ -17,6 +17,8 @@ import Vaccination from './screens/Vaccination';
 import DonateBlood from './screens/DonateBlood';
 import NewDoctors from './screens/NewDoctors';
 import Messaging from './screens/Messaging';
+import QRCode from './screens/QRCode';
+
 
 
 

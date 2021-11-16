@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 40,
     borderRadius: 20,
-    height: 632,
+    
   },
   text: {
     marginTop: 20,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
    footer: {
     backgroundColor: '#054EDE',
-    marginTop: 220,
+    marginTop: 170,
     width: 220,
     height: 40,
     marginLeft: 80,

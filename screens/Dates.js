@@ -100,51 +100,7 @@ export default function Dates({ navigation }) {
               <Text style={styles.date}>14</Text>
               <Text style={styles.day}>THUR</Text>
             </View>
-            {/* <View style={styles.card3}>
-            <Text style={styles.date}>15</Text>
-            <Text style={styles.day}>FRI</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>16</Text>
-            <Text style={styles.day}>SAT</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>18</Text>
-            <Text style={styles.day}>SUN</Text>
-          </View>
-          <View style={styles.card3}>
 
-            <Text style={styles.date}>19</Text>
-            <Text style={styles.day}>MON</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>20</Text>
-            <Text style={styles.day}>TUE</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>21</Text>
-            <Text style={styles.day}>WED</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>22</Text>
-            <Text style={styles.day}>THUR</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>23</Text>
-            <Text style={styles.day}>FRI</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>24</Text>
-            <Text style={styles.day}>SAT</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>25</Text>
-            <Text style={styles.day}>SUN</Text>
-          </View>
-          <View style={styles.card3}>
-            <Text style={styles.date}>26</Text>
-            <Text style={styles.day}>MON</Text>
-            </View> */}
           </View>
         </View>
       </ScrollView>

@@ -7,10 +7,11 @@ export default function CovidPalette() {
     return (
         <View style={styles.inner}>
             <View>
-                <TouchableOpacity>
+                <TouchableOpacity >
                     <Image
                         source={require('../assets/icon/covid-19.png')}
                         style={styles.icon}
+                   
                     />
                 </TouchableOpacity>
             </View>
