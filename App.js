@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'
 import Login from './screens/Login';
@@ -17,6 +17,8 @@ import Vaccination from './screens/Vaccination';
 import DonateBlood from './screens/DonateBlood';
 import NewDoctors from './screens/NewDoctors';
 import Messaging from './screens/Messaging';
+import QRCode from './screens/QRCode';
+
 
 
 
@@ -25,11 +27,11 @@ const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
 
   return (
-
     <NavigationContainer>
       <Stack.Navigator>
-
-        <Stack.Screen name="Messaging" component={Messaging} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="ResetPassword" component={ResetPassword} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Doctors" component={NewDoctors} />
         <Stack.Screen name="Book" component={Doctors} />
@@ -38,8 +40,11 @@ export default function App({ navigation }) {
         <Stack.Screen name="Contact" component={Contact} />
         <Stack.Screen name="Donation" component={DonateBlood} />
         <Stack.Screen name="Symptom" component={SymptopmChecker} />
-        <Stack.Screen name="Contacts" component={ContactForm} />       
-        <Stack.Screen name="SOS" component={SOS} />       
+        <Stack.Screen name="Contacts" component={ContactForm} />
+        <Stack.Screen name="SOS" component={SOS} />
+        <Stack.Screen name="Messaging" component={Messaging} />
+        <Stack.Screen name="QRCode" component={QRCode} />
+   
       </Stack.Navigator>
     </NavigationContainer>
   );

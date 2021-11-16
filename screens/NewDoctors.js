@@ -1,9 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, Dimensions, ScrollView, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, Dimensions, ScrollView, TouchableOpacity, Linking } from 'react-native'
 import { Card, Paragraph, Title } from 'react-native-paper'
 const { width, height } = Dimensions.get('screen')
 
 const NewDoctors = ({ navigation }) => {
+    const triggerCall = () => {
+        Linking.openURL('tel:0818855766')
+    };
+    const triggerMail = () => {
+        Linking.openURL('mailto:oloratopule716@gmail.com')
+    }
     return (
         <ScrollView horizontal={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} contentContainerStyle={styles.profileBody}>
             <Card style={styles.card}>
@@ -49,12 +55,7 @@ const NewDoctors = ({ navigation }) => {
 
                 <Title>Communication</Title>
                 <View>
-
-
-
-
-
-                    <TouchableOpacity onPress={() => navigation.navigate('SOS')}>
+                    <TouchableOpacity onPress={triggerMail}>
                         <View style={styles.contactListTypes}>
                             <Image style={styles.icon} source={require('../assets/icon/text.png')} />
                             <View>
@@ -64,11 +65,10 @@ const NewDoctors = ({ navigation }) => {
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
-
+                    <TouchableOpacity onPress={triggerCall}>
                         <View style={styles.contactListTypes}>
                             <Image style={styles.icon} source={require('../assets/icon/call.png')} />
-                            <View>
+                            <View >
                                 <Title>Audio Call</Title>
                                 <Paragraph>Call your doctor directly.</Paragraph>
                             </View>

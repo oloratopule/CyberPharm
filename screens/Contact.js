@@ -27,7 +27,7 @@ const Contacts = ({ navigation }) => {
 
             {contact.map(user => {
                 return (
-                    <ContactItem  />
+                    <ContactItem  number="0718752396" username="Mahloko"/>
                 )
             })}
 

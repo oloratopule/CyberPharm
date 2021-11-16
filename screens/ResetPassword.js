@@ -49,12 +49,11 @@ const styles = StyleSheet.create({
     },
     placeholder: {
         width: 258,
-        backgroundColor: '#E9F3F8',
+        backgroundColor: 'rgba(80, 131, 232, 1)',
         height: 42,
         marginTop: 45,
         borderRadius: 20,
         paddingLeft: 15,
-        color: 'black'
     },
     btn: {
         backgroundColor: 'background: rgba(80, 131, 232, 1);',
