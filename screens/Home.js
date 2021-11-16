@@ -33,11 +33,7 @@ const SOS = (()=>{
     return (
         <View style={styles.homeContent}>
             <View style={styles.top}>
-<<<<<<< HEAD
-                <TouchableOpacity  onPress={SOS}>
-=======
                 <TouchableOpacity  onPress={() => navigation.navigate('Panic')}>
->>>>>>> 99b43d2e68affd267199d76b679362fdc5f4676e
                     <SosButton />
                 </TouchableOpacity>
                 <NotificationCenter />
@@ -47,7 +43,7 @@ const SOS = (()=>{
                 <TouchableOpacity onPress={() => navigation.navigate('Vaccination')}>
                     <VaccinateIcon text="Vaccination" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Book')}>
+                <TouchableOpacity onPress={() => navigation.navigate('NewDoctors')}>
                     <Book text="Book Dr." />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('DonateBlood')}>
