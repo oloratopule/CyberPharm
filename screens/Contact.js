@@ -99,8 +99,7 @@ const styles = StyleSheet.create({
     }
     ,
     addIconContainer: {
-        position: 'absolute',
-        top: 740,
+        top: 0,
         left: 290
     }
     ,

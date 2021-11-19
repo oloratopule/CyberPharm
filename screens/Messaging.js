@@ -4,14 +4,10 @@ import { Paragraph, Title } from 'react-native-paper';
 const { width, height } = Dimensions.get('screen')
 const client = require('twilio')('AC06df3ab4309a87e11d9819c84a3f5891', 'a5555254b0123c63225ba2b7dcb64651');
 import { Twilio, } from 'twilio'
-import sgmail from '@sendgrid/mail'
-import SENDGRID_API_KEY from '../sendgrid.env'
 export default function Messaging() {
     const [phone, setPhone] = useState('');
     const [subject, setSubject] = useState('');
     const [name, setName] = useState('');
-    const sgMail = require('@sendgrid/mail')
-
     const Chat = () => {
 
         sgmail.setApiKey('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')

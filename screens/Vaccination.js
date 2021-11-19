@@ -1,18 +1,19 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Linking } from 'react-native';
+import { Text, View, StyleSheet, Linking, Dimensions } from 'react-native';
 
+const { width, height } = Dimensions.get('screen')
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 const url = 'https://sacoronavirus.co.za/evds/';
 
-export default function Vaccination({navigation}) {
+export default function Vaccination({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Why is vaccination important?</Text>
 
       <Text style={styles.text}>
         Vaccination is a safe and effective way to prevent disease and save
-        lives. When we get vaccinated,<br/>we are not just protecting ourselves, but
+        lives. When we get vaccinated,<br />we are not just protecting ourselves, but
         also those around us. Some people, like those who are seriously ill, are
         advised not to get certain vaccines – so they depend on the rest of us
         to get vaccinated and help reduce the spread of disease.
@@ -21,7 +22,7 @@ export default function Vaccination({navigation}) {
       <Text style={styles.header}>How do vaccines work?</Text>
       <Text style={styles.text}>
         Vaccines train your immune system to create antibodies, just as it does
-        when it is exposed<br/>to a disease. When you get a vaccine, your<br/>immune
+        when it is exposed<br />to a disease. When you get a vaccine, your<br />immune
         system responds. It:
       </Text>
 
@@ -45,9 +46,7 @@ export default function Vaccination({navigation}) {
       </Text>
 
       <View style={styles.footer}>
-           <Text style={styles.register} >
-          Register for Vaccination Here
-        </Text>
+        <Text style={styles.register}>Register for Vaccination Here</Text>
         <MaterialIcons
           name="app-registration"
           size={20}
@@ -62,9 +61,8 @@ export default function Vaccination({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
-    borderRadius: 20,
-    height: 632,
+    height: height,
+    backgroundColor: '#fff'
   },
   text: {
     marginTop: 20,
@@ -75,7 +73,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     fontSize: 25,
     marginTop: 10,
-    fontWeight:'bold'
+    fontWeight: 'bold'
   },
   list: {
     marginLeft: 20,
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: '#054EDE',
-    marginTop: 150,
+    marginTop: 100,
     width: 280,
     height: 40,
     marginLeft: 60,
