@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
 import login from '../auth/login';
-
+import AlertBox from '../components/AlertBox';
 const image = { uri: "../assets/bgOne.png" };
 const Login = ({ navigation }) => {
 
@@ -9,10 +9,15 @@ const Login = ({ navigation }) => {
     const [password, setPassword] = useState('')
 
     const logi = () => {
-        login(email, password, navigation);
+
+        if (email == "" && password == "") {
+            <AlertBox message="invalid input" />
+            alert('Complete the form')
+        } else {
+            login(email, password, navigation);
+        }
 
     }
-
     return (
 
 

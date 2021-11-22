@@ -1,38 +1,34 @@
-import React, { Component } from 'react'
-import { Image, StyleSheet, TouchableOpacity, View, } from 'react-native'
+import React, { useState } from "react";
+import { View, StyleSheet, Button, Alert } from "react-native";
 
+const AlertBox = (props) => {
+    const createTwoButtonAlert = () =>
+        Alert.alert(
+            `${props.message}`,
+            "Login Success",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => props.navigation,
+                    style: "cancel"
+                },
+                { text: "OK", onPress: () => console.log("OK Pressed") }
+            ]
+        );
 
- class AlertBox extends Component {
-    
-    render() {
-        return (
-            <View>
-            <TouchableOpacity>
-               {/* <Image style={styles.icon} source={require('../assets/icon/notification.png')} /> */}
-                
-            </TouchableOpacity>    
-               
-               
-               
-     
-            </View>
-        )
-    }
+    return (
+        <View style={styles.container}>
+            {createTwoButtonAlert}
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-    icon: {
-        width: 20,
-        height:20,
-        backgroundColor: '#fff',
-        marginTop:-20,
-        marginLeft:300,
-       
-       
-    },
-
-  
-   
-})
+    container: {
+        flex: 1,
+        justifyContent: "space-around",
+        alignItems: "center"
+    }
+});
 
 export default AlertBox;

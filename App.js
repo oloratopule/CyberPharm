@@ -18,10 +18,8 @@ import DonateBlood from './screens/DonateBlood';
 import NewDoctors from './screens/NewDoctors';
 import Messaging from './screens/Messaging';
 import QRCode from './screens/QRCode';
-
-
-
-
+import AlertBox from './components/AlertBox';
+import Loader from './components/Loader';
 
 const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
@@ -29,6 +27,8 @@ export default function App({ navigation }) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Contacts" component={Contact} />
         <Stack.Screen name="Panic" component={SOS} />

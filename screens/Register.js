@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import signUp from '../auth/signUp'
-
-
-
+import AlertBox from '../components/AlertBox';
+const { width, height } = Dimensions.get('screen')
 export default function Register({ navigation }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [Confirmpassword, setConfirmpassword] = useState('')
     const RegisterUser = () => {
-        signUp(email, password, Confirmpassword);
+        if (email == "" && password == "" && Confirmpassword == "") {
+            <AlertBox message={"Invalid input"} />
+            alert("Invalidd Input")
+        } else {
+            signUp(email, password, Confirmpassword);
+        }
     }
     return (
-        <ImageBackground source={require('../assets/icon/backgroundImageRegister.png')}>
+        <ImageBackground source={require('../assets/icon/backgroundImageRegister.png')} style={styles.container}>
             <View style={styles.main}>
                 <View style={styles.form}>
                     <TextInput
@@ -44,7 +48,10 @@ export default function Register({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-
+    container: {
+        height: height,
+        // width: 400
+    },
     main: {
         backgroundColor: 'background: rgba(5, 78, 222, 0.7);',
         height: '86.7%',
