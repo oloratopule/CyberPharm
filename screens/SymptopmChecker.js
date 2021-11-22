@@ -17,7 +17,7 @@ const SymptopmChecker = () => {
     const [title, setTitel] = useState('');
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
-    const containerStyle = { backgroundColor: 'white', padding: 20, width: width - 30 , alignSelf:'center' };
+    const containerStyle = { backgroundColor: 'white', padding: 20, width: width - 30, alignSelf: 'center' };
     const Pressable = (symptomId, theTitle) => {
         console.log(symptomId, theTitle)
         setTitel(theTitle)
@@ -103,9 +103,9 @@ const SymptopmChecker = () => {
                     </Modal>
                 </Portal>
             </Provider >
-            <Button style={{ marginTop: 30 }} onPress={showModal}>
-                Show
-            </Button>
+            <TouchableOpacity style={styles.showBtn} onPress={showModal}>
+                <Text style={styles.sumbitLabel}>SHOW</Text>
+            </TouchableOpacity>
 
 
         </View>
@@ -163,10 +163,22 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'center',
         backgroundColor: '#3E64FF',
-        borderRadius: 10
+        borderRadius: 10,
     }
     ,
     textMap: {
         flexDirection: 'row'
     }
+   ,
+  showBtn:{
+    alignSelf: 'center',
+    marginTop: 20,
+    height: 60,
+    width: 360,
+    textAlign: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#3E64FF',
+    borderRadius: 10,
+    marginBottom: 170
+  }
 })

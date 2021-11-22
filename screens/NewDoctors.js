@@ -85,7 +85,7 @@ const NewDoctors = ({ navigation }) => {
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.bookButton} onPress={() => navigation.navigate('Booking')}>
+                    <TouchableOpacity style={styles.bookButton} onPress={() => navigation.navigate('Dates')}>
                         <Text style={styles.bookButtontext}>Book Appointment</Text>
                     </TouchableOpacity>
                 </View>

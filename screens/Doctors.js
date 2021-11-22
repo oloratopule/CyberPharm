@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 
-export default function Doctors({ navigation }) {
+export default function BookDoctors({ navigation }) {
   return (
     <View style={styles.container}>
       <View>
@@ -65,7 +65,7 @@ export default function Doctors({ navigation }) {
 
       <View style={styles.cards}>
         <View style={styles.cardRow}>
-          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Doctors')}>
+          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Book')}>
             <View>
               <Image style={styles.sos} />
             </View>
@@ -73,7 +73,7 @@ export default function Doctors({ navigation }) {
             <Text style={styles.occupation}>Viralogist</Text>
             <Text></Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Doctors')}>
+          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Book')}>
             <View>
               <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
             </View>
@@ -84,7 +84,7 @@ export default function Doctors({ navigation }) {
         </View>
 
         <View style={styles.cardRow}>
-          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Doctors')}>
+          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Book')}>
             <View>
               <Image style={styles.sos} />
             </View>
@@ -92,7 +92,7 @@ export default function Doctors({ navigation }) {
             <Text style={styles.occupation}>Viralogist</Text>
             <Text></Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Doctors')}>
+          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Book')}>
             <View>
               <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
             </View>
@@ -103,7 +103,7 @@ export default function Doctors({ navigation }) {
         </View>
 
         <View style={styles.cardRow}>
-          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Doctors')}>
+          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Book')}>
             <View>
               <Image style={styles.sos} />
             </View>
@@ -111,7 +111,7 @@ export default function Doctors({ navigation }) {
             <Text style={styles.occupation}>Viralogist</Text>
             <Text></Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Doctors')}>
+          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Book')}>
             <View>
               <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
             </View>
@@ -122,7 +122,7 @@ export default function Doctors({ navigation }) {
         </View>
 
         <View style={styles.cardRow}>
-          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Doctors')}>
+          <TouchableOpacity style={styles.card1} onPress={() => navigation.navigate('Book')}>
             <View>
               <Image style={styles.sos} />
             </View>
@@ -130,7 +130,7 @@ export default function Doctors({ navigation }) {
             <Text style={styles.occupation}>Viralogist</Text>
             <Text></Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Doctors')}>
+          <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate('Book')}>
             <View>
               <Image style={styles.sos} source={require('../assets/icon/nurse.jpg')} />
             </View>

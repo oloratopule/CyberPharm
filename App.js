@@ -33,8 +33,6 @@ export default function App({ navigation }) {
         <Stack.Screen name="Contacts" component={Contact} />
         <Stack.Screen name="Panic" component={SOS} />
         <Stack.Screen name="Doctors" component={Doctors} />
-        <Stack.Screen name="NewDoctors" component={NewDoctors} />
-        <Stack.Screen name="Appointment" component={Appointment} />
         <Stack.Screen name="Symptom" component={SymptopmChecker} />
         <Stack.Screen name="ContactForm" component={ContactForm} />
         <Stack.Screen name="Vaccination" component={Vaccination} />
